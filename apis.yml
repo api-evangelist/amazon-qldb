@@ -1,0 +1,67 @@
+name: Amazon QLDB API
+description: Amazon Quantum Ledger Database (QLDB) is a fully managed ledger database that provides a transparent, immutable, and cryptographically verifiable transaction log. QLDB tracks each and every application data change and maintains a complete and verifiable history of changes over time, making it ideal for systems of record where data integrity and auditability are critical.
+image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
+url: https://aws.amazon.com/qldb/
+created: '2024-01-15'
+modified: '2026-03-13'
+apis:
+- name: Amazon QLDB API
+  description: >-
+    The Amazon QLDB API provides programmatic access to manage ledger databases
+    with immutable, transparent, and cryptographically verifiable transaction
+    logs. It enables developers to create and manage ledgers, submit PartiQL
+    statements, stream journal data, and export ledger blocks for verification
+    and auditing purposes.
+  image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
+  humanURL: https://aws.amazon.com/qldb/
+  baseURL: https://qldb.amazonaws.com
+  tags:
+  - Database
+  - Ledger
+  - Blockchain
+  - AWS
+  properties:
+  - type: Documentation
+    url: https://docs.aws.amazon.com/qldb/
+  - type: OpenAPI
+    url: openapi/amazon-qldb-openapi.yml
+  - type: Pricing
+    url: https://aws.amazon.com/qldb/pricing/
+  - type: Getting Started
+    url: https://aws.amazon.com/qldb/getting-started/
+  - type: FAQ
+    url: https://aws.amazon.com/qldb/faqs/
+common:
+- type: Portal
+  url: https://aws.amazon.com/
+- type: Website
+  url: https://aws.amazon.com/qldb/
+- type: Documentation
+  url: https://docs.aws.amazon.com/qldb/
+- type: Terms of Service
+  url: https://aws.amazon.com/service-terms/
+- type: Privacy Policy
+  url: https://aws.amazon.com/privacy/
+- type: Support
+  url: https://aws.amazon.com/premiumsupport/
+- type: GitHub Organization
+  url: https://github.com/aws
+- type: Console
+  url: https://console.aws.amazon.com/qldb/
+- type: Sign Up
+  url: https://signin.aws.amazon.com/signup?request_type=register
+- type: Login
+  url: https://aws.amazon.com/console/
+- type: Status
+  url: https://health.aws.amazon.com/health/status
+- type: Contact
+  url: https://aws.amazon.com/contact-us/
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+  url: https://apievangelist.com
+tags:
+- Database
+- Ledger
+- Blockchain
+- AWS
