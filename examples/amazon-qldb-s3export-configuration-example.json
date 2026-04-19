@@ -1,0 +1,5 @@
+{
+  "Bucket": "example-Bucket",
+  "Prefix": "example-Prefix",
+  "EncryptionConfiguration": "example-EncryptionConfiguration"
+}

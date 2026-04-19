@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-qldb/refs/heads/main/json-structure/amazon-qldb-get-revision-request-structure.json",
+  "name": "GetRevisionRequest",
+  "description": "GetRevisionRequest schema from Amazon QLDB API",
+  "type": "object",
+  "properties": {
+    "BlockAddress": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ValueHolder"
+        },
+        {
+          "description": "<p>The block location of the document revision to be verified. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p> <p>For example: <code>{strandId:\"BlFTjlSXze9BIh1KOszcE3\",sequenceNo:14}</code>.</p>"
+        }
+      ]
+    },
+    "DocumentId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UniqueId"
+        },
+        {
+          "description": "The UUID (represented in Base62-encoded text) of the document to be verified."
+        }
+      ]
+    },
+    "DigestTipAddress": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ValueHolder"
+        },
+        {
+          "description": "<p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p> <p>For example: <code>{strandId:\"BlFTjlSXze9BIh1KOszcE3\",sequenceNo:49}</code>.</p>"
+        }
+      ]
+    }
+  },
+  "required": [
+    "BlockAddress",
+    "DocumentId"
+  ]
+}

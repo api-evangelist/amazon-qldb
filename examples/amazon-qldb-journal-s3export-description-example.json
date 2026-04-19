@@ -1,0 +1,11 @@
+{
+  "LedgerName": "my-ledger",
+  "ExportId": "ldgr-433",
+  "ExportCreationTime": "2025-03-15T14:30:00Z",
+  "Status": "ACTIVE",
+  "InclusiveStartTime": "2025-03-15T14:30:00Z",
+  "ExclusiveEndTime": "2025-03-15T14:30:00Z",
+  "S3ExportConfiguration": "example-S3ExportConfiguration",
+  "RoleArn": "arn:aws:qldb:us-east-1:123456789:ledger/my-ledger",
+  "OutputFormat": "example-OutputFormat"
+}

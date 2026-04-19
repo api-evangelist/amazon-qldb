@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-qldb/refs/heads/main/json-structure/amazon-qldb-s3encryption-configuration-structure.json",
+  "name": "S3EncryptionConfiguration",
+  "description": "The encryption settings that are used by a journal export job to write data in an Amazon Simple Storage Service (Amazon S3) bucket.",
+  "type": "object",
+  "properties": {
+    "ObjectEncryptionType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/S3ObjectEncryptionType"
+        },
+        {
+          "description": "<p>The Amazon S3 object encryption type.</p> <p>To learn more about server-side encryption options in Amazon S3, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html\">Protecting Data Using Server-Side Encryption</a> in the <i>Amazon S3 Developer Guide</i>.</p>"
+        }
+      ]
+    },
+    "KmsKeyArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "<p>The Amazon Resource Name (ARN) of a symmetric key in Key Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p> <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p> <p> <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the <code>ObjectEncryptionType</code>.</p>"
+        }
+      ]
+    }
+  },
+  "required": [
+    "ObjectEncryptionType"
+  ]
+}

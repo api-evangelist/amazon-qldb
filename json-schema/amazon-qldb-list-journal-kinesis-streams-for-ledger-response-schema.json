@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-qldb/refs/heads/main/json-schema/amazon-qldb-list-journal-kinesis-streams-for-ledger-response-schema.json",
+  "title": "ListJournalKinesisStreamsForLedgerResponse",
+  "description": "ListJournalKinesisStreamsForLedgerResponse schema from Amazon QLDB API",
+  "type": "object",
+  "properties": {
+    "Streams": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JournalKinesisStreamDescriptionList"
+        },
+        {
+          "description": "The array of QLDB journal stream descriptors that are associated with the given ledger."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "<ul> <li> <p>If <code>NextToken</code> is empty, the last page of results has been processed and there are no more results to be retrieved.</p> </li> <li> <p>If <code>NextToken</code> is <i>not</i> empty, more results are available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalKinesisStreamsForLedger</code> call.</p> </li> </ul>"
+        }
+      ]
+    }
+  }
+}

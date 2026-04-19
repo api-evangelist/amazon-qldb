@@ -1,0 +1,13 @@
+{
+  "LedgerName": "my-ledger",
+  "CreationTime": "2025-03-15T14:30:00Z",
+  "InclusiveStartTime": "2025-03-15T14:30:00Z",
+  "ExclusiveEndTime": "2025-03-15T14:30:00Z",
+  "RoleArn": "arn:aws:qldb:us-east-1:123456789:ledger/my-ledger",
+  "StreamId": "ldgr-896",
+  "Arn": "arn:aws:qldb:us-east-1:123456789:ledger/my-ledger",
+  "Status": "ACTIVE",
+  "KinesisConfiguration": "example-KinesisConfiguration",
+  "ErrorCause": "example-ErrorCause",
+  "StreamName": "my-ledger"
+}

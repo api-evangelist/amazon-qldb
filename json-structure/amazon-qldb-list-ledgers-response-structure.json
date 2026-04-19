@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-qldb/refs/heads/main/json-structure/amazon-qldb-list-ledgers-response-structure.json",
+  "name": "ListLedgersResponse",
+  "description": "ListLedgersResponse schema from Amazon QLDB API",
+  "type": "object",
+  "properties": {
+    "Ledgers": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LedgerList"
+        },
+        {
+          "description": "The array of ledger summaries that are associated with the current Amazon Web Services account and Region."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "<p>A pagination token, indicating whether there are more results available:</p> <ul> <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li> <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListLedgers</code> call.</p> </li> </ul>"
+        }
+      ]
+    }
+  }
+}

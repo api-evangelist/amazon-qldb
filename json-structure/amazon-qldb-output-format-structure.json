@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-qldb/refs/heads/main/json-structure/amazon-qldb-output-format-structure.json",
+  "name": "OutputFormat",
+  "description": "OutputFormat schema from Amazon QLDB API",
+  "type": "string",
+  "enum": [
+    "ION_BINARY",
+    "ION_TEXT",
+    "JSON"
+  ]
+}

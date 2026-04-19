@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-qldb/refs/heads/main/json-structure/amazon-qldb-export-journal-to-s3response-structure.json",
+  "name": "ExportJournalToS3Response",
+  "description": "ExportJournalToS3Response schema from Amazon QLDB API",
+  "type": "object",
+  "properties": {
+    "ExportId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UniqueId"
+        },
+        {
+          "description": "<p>The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export job.</p> <p>To describe your export request and check the status of the job, you can use <code>ExportId</code> to call <code>DescribeJournalS3Export</code>.</p>"
+        }
+      ]
+    }
+  },
+  "required": [
+    "ExportId"
+  ]
+}

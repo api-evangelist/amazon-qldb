@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-qldb/refs/heads/main/json-structure/amazon-qldb-stream-journal-to-kinesis-response-structure.json",
+  "name": "StreamJournalToKinesisResponse",
+  "description": "StreamJournalToKinesisResponse schema from Amazon QLDB API",
+  "type": "object",
+  "properties": {
+    "StreamId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UniqueId"
+        },
+        {
+          "description": "The UUID (represented in Base62-encoded text) that QLDB assigns to each QLDB journal stream."
+        }
+      ]
+    }
+  }
+}

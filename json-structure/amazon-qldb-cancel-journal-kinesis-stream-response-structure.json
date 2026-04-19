@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-qldb/refs/heads/main/json-structure/amazon-qldb-cancel-journal-kinesis-stream-response-structure.json",
+  "name": "CancelJournalKinesisStreamResponse",
+  "description": "CancelJournalKinesisStreamResponse schema from Amazon QLDB API",
+  "type": "object",
+  "properties": {
+    "StreamId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UniqueId"
+        },
+        {
+          "description": "The UUID (Base62-encoded text) of the canceled QLDB journal stream."
+        }
+      ]
+    }
+  }
+}

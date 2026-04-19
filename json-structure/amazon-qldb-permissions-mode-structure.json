@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-qldb/refs/heads/main/json-structure/amazon-qldb-permissions-mode-structure.json",
+  "name": "PermissionsMode",
+  "description": "PermissionsMode schema from Amazon QLDB API",
+  "type": "string",
+  "enum": [
+    "ALLOW_ALL",
+    "STANDARD"
+  ]
+}

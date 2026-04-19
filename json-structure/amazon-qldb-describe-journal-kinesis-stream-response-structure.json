@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-qldb/refs/heads/main/json-structure/amazon-qldb-describe-journal-kinesis-stream-response-structure.json",
+  "name": "DescribeJournalKinesisStreamResponse",
+  "description": "DescribeJournalKinesisStreamResponse schema from Amazon QLDB API",
+  "type": "object",
+  "properties": {
+    "Stream": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JournalKinesisStreamDescription"
+        },
+        {
+          "description": "Information about the QLDB journal stream returned by a <code>DescribeJournalS3Export</code> request."
+        }
+      ]
+    }
+  }
+}

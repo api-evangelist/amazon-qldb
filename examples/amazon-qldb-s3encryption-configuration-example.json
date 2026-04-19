@@ -1,0 +1,4 @@
+{
+  "ObjectEncryptionType": "example-ObjectEncryptionType",
+  "KmsKeyArn": "arn:aws:qldb:us-east-1:123456789:ledger/my-ledger"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-qldb/refs/heads/main/json-schema/amazon-qldb-value-holder-schema.json",
+  "title": "ValueHolder",
+  "description": "A structure that can contain a value in multiple encoding formats.",
+  "type": "object",
+  "properties": {
+    "IonText": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IonText"
+        },
+        {
+          "description": "An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure."
+        }
+      ]
+    }
+  }
+}

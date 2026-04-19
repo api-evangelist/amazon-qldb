@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-qldb/refs/heads/main/json-schema/amazon-qldb-journal-s3export-description-schema.json",
+  "title": "JournalS3ExportDescription",
+  "description": "Information about a journal export job, including the ledger name, export ID, creation time, current status, and the parameters of the original export creation request.",
+  "type": "object",
+  "properties": {
+    "LedgerName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LedgerName"
+        },
+        {
+          "description": "The name of the ledger."
+        }
+      ]
+    },
+    "ExportId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UniqueId"
+        },
+        {
+          "description": "The UUID (represented in Base62-encoded text) of the journal export job."
+        }
+      ]
+    },
+    "ExportCreationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The date and time, in epoch time format, when the export job was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)"
+        }
+      ]
+    },
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExportStatus"
+        },
+        {
+          "description": "The current state of the journal export job."
+        }
+      ]
+    },
+    "InclusiveStartTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The inclusive start date and time for the range of journal contents that was specified in the original export request."
+        }
+      ]
+    },
+    "ExclusiveEndTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The exclusive end date and time for the range of journal contents that was specified in the original export request."
+        }
+      ]
+    },
+    "S3ExportConfiguration": {
+      "$ref": "#/components/schemas/S3ExportConfiguration"
+    },
+    "RoleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "<p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p> <ul> <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li> </ul>"
+        }
+      ]
+    },
+    "OutputFormat": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OutputFormat"
+        },
+        {
+          "description": "The output format of the exported journal data."
+        }
+      ]
+    }
+  },
+  "required": [
+    "LedgerName",
+    "ExportId",
+    "ExportCreationTime",
+    "Status",
+    "InclusiveStartTime",
+    "ExclusiveEndTime",
+    "S3ExportConfiguration",
+    "RoleArn"
+  ]
+}

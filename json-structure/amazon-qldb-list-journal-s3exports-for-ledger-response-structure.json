@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-qldb/refs/heads/main/json-structure/amazon-qldb-list-journal-s3exports-for-ledger-response-structure.json",
+  "name": "ListJournalS3ExportsForLedgerResponse",
+  "description": "ListJournalS3ExportsForLedgerResponse schema from Amazon QLDB API",
+  "type": "object",
+  "properties": {
+    "JournalS3Exports": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JournalS3ExportList"
+        },
+        {
+          "description": "The array of journal export job descriptions that are associated with the specified ledger."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "<ul> <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li> <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalS3ExportsForLedger</code> call.</p> </li> </ul>"
+        }
+      ]
+    }
+  }
+}

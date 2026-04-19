@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-qldb/refs/heads/main/json-structure/amazon-qldb-encryption-status-structure.json",
+  "name": "EncryptionStatus",
+  "description": "EncryptionStatus schema from Amazon QLDB API",
+  "type": "string",
+  "enum": [
+    "ENABLED",
+    "UPDATING",
+    "KMS_KEY_INACCESSIBLE"
+  ]
+}

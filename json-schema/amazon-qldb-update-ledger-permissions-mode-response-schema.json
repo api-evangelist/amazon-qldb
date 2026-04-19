@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-qldb/refs/heads/main/json-schema/amazon-qldb-update-ledger-permissions-mode-response-schema.json",
+  "title": "UpdateLedgerPermissionsModeResponse",
+  "description": "UpdateLedgerPermissionsModeResponse schema from Amazon QLDB API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LedgerName"
+        },
+        {
+          "description": "The name of the ledger."
+        }
+      ]
+    },
+    "Arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) for the ledger."
+        }
+      ]
+    },
+    "PermissionsMode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PermissionsMode"
+        },
+        {
+          "description": "The current permissions mode of the ledger."
+        }
+      ]
+    }
+  }
+}

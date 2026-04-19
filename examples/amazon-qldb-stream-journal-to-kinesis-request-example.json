@@ -1,0 +1,8 @@
+{
+  "RoleArn": "arn:aws:qldb:us-east-1:123456789:ledger/my-ledger",
+  "Tags": "example-Tags",
+  "InclusiveStartTime": "2025-03-15T14:30:00Z",
+  "ExclusiveEndTime": "2025-03-15T14:30:00Z",
+  "KinesisConfiguration": "example-KinesisConfiguration",
+  "StreamName": "my-ledger"
+}

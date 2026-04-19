@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-qldb/refs/heads/main/json-schema/amazon-qldb-get-digest-response-schema.json",
+  "title": "GetDigestResponse",
+  "description": "GetDigestResponse schema from Amazon QLDB API",
+  "type": "object",
+  "properties": {
+    "Digest": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Digest"
+        },
+        {
+          "description": "The 256-bit hash value representing the digest returned by a <code>GetDigest</code> request."
+        }
+      ]
+    },
+    "DigestTipAddress": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ValueHolder"
+        },
+        {
+          "description": "The latest block location covered by the digest that you requested. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Digest",
+    "DigestTipAddress"
+  ]
+}

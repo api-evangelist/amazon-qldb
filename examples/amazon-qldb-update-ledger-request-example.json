@@ -1,0 +1,4 @@
+{
+  "DeletionProtection": "example-DeletionProtection",
+  "KmsKey": "abc123"
+}

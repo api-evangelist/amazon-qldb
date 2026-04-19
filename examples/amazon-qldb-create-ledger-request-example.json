@@ -1,0 +1,7 @@
+{
+  "Name": "my-ledger",
+  "Tags": "example-Tags",
+  "PermissionsMode": "example-PermissionsMode",
+  "DeletionProtection": "example-DeletionProtection",
+  "KmsKey": "abc123"
+}

@@ -1,0 +1,217 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "qldb": "https://qldb.amazonaws.com/schema/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "S3EncryptionConfiguration": "qldb:S3EncryptionConfiguration",
+    "ObjectEncryptionType": {
+      "@id": "qldb:ObjectEncryptionType",
+      "@type": "xsd:string"
+    },
+    "KmsKeyArn": {
+      "@id": "qldb:KmsKeyArn",
+      "@type": "xsd:string"
+    },
+    "ValueHolder": "qldb:ValueHolder",
+    "IonText": {
+      "@id": "qldb:IonText",
+      "@type": "xsd:string"
+    },
+    "ListJournalS3ExportsResponse": "qldb:ListJournalS3ExportsResponse",
+    "JournalS3Exports": {
+      "@id": "qldb:JournalS3Exports",
+      "@type": "xsd:string"
+    },
+    "NextToken": {
+      "@id": "qldb:NextToken",
+      "@type": "xsd:string"
+    },
+    "CreateLedgerResponse": "qldb:CreateLedgerResponse",
+    "Name": {
+      "@id": "qldb:Name",
+      "@type": "xsd:string"
+    },
+    "Arn": {
+      "@id": "qldb:Arn",
+      "@type": "xsd:string"
+    },
+    "State": {
+      "@id": "qldb:State",
+      "@type": "xsd:string"
+    },
+    "CreationDateTime": {
+      "@id": "qldb:CreationDateTime",
+      "@type": "xsd:string"
+    },
+    "PermissionsMode": {
+      "@id": "qldb:PermissionsMode",
+      "@type": "xsd:string"
+    },
+    "DeletionProtection": {
+      "@id": "qldb:DeletionProtection",
+      "@type": "xsd:string"
+    },
+    "GetDigestResponse": "qldb:GetDigestResponse",
+    "Digest": {
+      "@id": "qldb:Digest",
+      "@type": "xsd:string"
+    },
+    "DigestTipAddress": {
+      "@id": "qldb:DigestTipAddress",
+      "@type": "xsd:string"
+    },
+    "UpdateLedgerRequest": "qldb:UpdateLedgerRequest",
+    "KmsKey": {
+      "@id": "qldb:KmsKey",
+      "@type": "xsd:string"
+    },
+    "LedgerSummary": "qldb:LedgerSummary",
+    "KinesisConfiguration": "qldb:KinesisConfiguration",
+    "StreamArn": {
+      "@id": "qldb:StreamArn",
+      "@type": "xsd:string"
+    },
+    "AggregationEnabled": {
+      "@id": "qldb:AggregationEnabled",
+      "@type": "xsd:string"
+    },
+    "ListJournalS3ExportsForLedgerResponse": "qldb:ListJournalS3ExportsForLedgerResponse",
+    "StreamJournalToKinesisResponse": "qldb:StreamJournalToKinesisResponse",
+    "StreamId": {
+      "@id": "qldb:StreamId",
+      "@type": "xsd:string"
+    },
+    "GetRevisionResponse": "qldb:GetRevisionResponse",
+    "Proof": {
+      "@id": "qldb:Proof",
+      "@type": "xsd:string"
+    },
+    "Revision": {
+      "@id": "qldb:Revision",
+      "@type": "xsd:string"
+    },
+    "GetRevisionRequest": "qldb:GetRevisionRequest",
+    "BlockAddress": {
+      "@id": "qldb:BlockAddress",
+      "@type": "xsd:string"
+    },
+    "DocumentId": {
+      "@id": "qldb:DocumentId",
+      "@type": "xsd:string"
+    },
+    "JournalKinesisStreamDescription": "qldb:JournalKinesisStreamDescription",
+    "LedgerName": {
+      "@id": "qldb:LedgerName",
+      "@type": "xsd:string"
+    },
+    "CreationTime": {
+      "@id": "qldb:CreationTime",
+      "@type": "xsd:string"
+    },
+    "InclusiveStartTime": {
+      "@id": "qldb:InclusiveStartTime",
+      "@type": "xsd:string"
+    },
+    "ExclusiveEndTime": {
+      "@id": "qldb:ExclusiveEndTime",
+      "@type": "xsd:string"
+    },
+    "RoleArn": {
+      "@id": "qldb:RoleArn",
+      "@type": "xsd:string"
+    },
+    "Status": {
+      "@id": "qldb:Status",
+      "@type": "xsd:string"
+    },
+    "ErrorCause": {
+      "@id": "qldb:ErrorCause",
+      "@type": "xsd:string"
+    },
+    "StreamName": {
+      "@id": "qldb:StreamName",
+      "@type": "xsd:string"
+    },
+    "DescribeJournalS3ExportResponse": "qldb:DescribeJournalS3ExportResponse",
+    "ExportDescription": {
+      "@id": "qldb:ExportDescription",
+      "@type": "xsd:string"
+    },
+    "StreamJournalToKinesisRequest": "qldb:StreamJournalToKinesisRequest",
+    "Tags": {
+      "@id": "qldb:Tags",
+      "@type": "xsd:string"
+    },
+    "UpdateLedgerResponse": "qldb:UpdateLedgerResponse",
+    "EncryptionDescription": {
+      "@id": "qldb:EncryptionDescription",
+      "@type": "xsd:string"
+    },
+    "UpdateLedgerPermissionsModeResponse": "qldb:UpdateLedgerPermissionsModeResponse",
+    "GetBlockResponse": "qldb:GetBlockResponse",
+    "Block": {
+      "@id": "qldb:Block",
+      "@type": "xsd:string"
+    },
+    "ListTagsForResourceResponse": "qldb:ListTagsForResourceResponse",
+    "ExportJournalToS3Response": "qldb:ExportJournalToS3Response",
+    "ExportId": {
+      "@id": "qldb:ExportId",
+      "@type": "xsd:string"
+    },
+    "DescribeLedgerResponse": "qldb:DescribeLedgerResponse",
+    "GetBlockRequest": "qldb:GetBlockRequest",
+    "DescribeJournalKinesisStreamResponse": "qldb:DescribeJournalKinesisStreamResponse",
+    "Stream": {
+      "@id": "qldb:Stream",
+      "@type": "xsd:string"
+    },
+    "ExportJournalToS3Request": "qldb:ExportJournalToS3Request",
+    "S3ExportConfiguration": "qldb:S3ExportConfiguration",
+    "OutputFormat": {
+      "@id": "qldb:OutputFormat",
+      "@type": "xsd:string"
+    },
+    "JournalS3ExportDescription": "qldb:JournalS3ExportDescription",
+    "ExportCreationTime": {
+      "@id": "qldb:ExportCreationTime",
+      "@type": "xsd:string"
+    },
+    "ListLedgersResponse": "qldb:ListLedgersResponse",
+    "Ledgers": {
+      "@id": "qldb:Ledgers",
+      "@type": "xsd:string"
+    },
+    "LedgerEncryptionDescription": "qldb:LedgerEncryptionDescription",
+    "EncryptionStatus": {
+      "@id": "qldb:EncryptionStatus",
+      "@type": "xsd:string"
+    },
+    "InaccessibleKmsKeyDateTime": {
+      "@id": "qldb:InaccessibleKmsKeyDateTime",
+      "@type": "xsd:string"
+    },
+    "TagResourceRequest": "qldb:TagResourceRequest",
+    "ListJournalKinesisStreamsForLedgerResponse": "qldb:ListJournalKinesisStreamsForLedgerResponse",
+    "Streams": {
+      "@id": "qldb:Streams",
+      "@type": "xsd:string"
+    },
+    "Bucket": {
+      "@id": "qldb:Bucket",
+      "@type": "xsd:string"
+    },
+    "Prefix": {
+      "@id": "qldb:Prefix",
+      "@type": "xsd:string"
+    },
+    "EncryptionConfiguration": {
+      "@id": "qldb:EncryptionConfiguration",
+      "@type": "xsd:string"
+    },
+    "CreateLedgerRequest": "qldb:CreateLedgerRequest",
+    "UpdateLedgerPermissionsModeRequest": "qldb:UpdateLedgerPermissionsModeRequest",
+    "CancelJournalKinesisStreamResponse": "qldb:CancelJournalKinesisStreamResponse"
+  }
+}

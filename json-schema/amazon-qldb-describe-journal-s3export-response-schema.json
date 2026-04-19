@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-qldb/refs/heads/main/json-schema/amazon-qldb-describe-journal-s3export-response-schema.json",
+  "title": "DescribeJournalS3ExportResponse",
+  "description": "DescribeJournalS3ExportResponse schema from Amazon QLDB API",
+  "type": "object",
+  "properties": {
+    "ExportDescription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JournalS3ExportDescription"
+        },
+        {
+          "description": "Information about the journal export job returned by a <code>DescribeJournalS3Export</code> request."
+        }
+      ]
+    }
+  },
+  "required": [
+    "ExportDescription"
+  ]
+}

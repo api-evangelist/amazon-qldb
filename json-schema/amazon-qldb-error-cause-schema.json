@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-qldb/refs/heads/main/json-schema/amazon-qldb-error-cause-schema.json",
+  "title": "ErrorCause",
+  "description": "ErrorCause schema from Amazon QLDB API",
+  "type": "string",
+  "enum": [
+    "KINESIS_STREAM_NOT_FOUND",
+    "IAM_PERMISSION_REVOKED"
+  ]
+}

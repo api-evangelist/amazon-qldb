@@ -1,0 +1,5 @@
+{
+  "Name": "my-ledger",
+  "Arn": "arn:aws:qldb:us-east-1:123456789:ledger/my-ledger",
+  "PermissionsMode": "example-PermissionsMode"
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-qldb/refs/heads/main/json-structure/amazon-qldb-s3object-encryption-type-structure.json",
+  "name": "S3ObjectEncryptionType",
+  "description": "S3ObjectEncryptionType schema from Amazon QLDB API",
+  "type": "string",
+  "enum": [
+    "SSE_KMS",
+    "SSE_S3",
+    "NO_ENCRYPTION"
+  ]
+}

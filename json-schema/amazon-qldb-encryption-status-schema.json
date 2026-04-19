@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-qldb/refs/heads/main/json-schema/amazon-qldb-encryption-status-schema.json",
+  "title": "EncryptionStatus",
+  "description": "EncryptionStatus schema from Amazon QLDB API",
+  "type": "string",
+  "enum": [
+    "ENABLED",
+    "UPDATING",
+    "KMS_KEY_INACCESSIBLE"
+  ]
+}

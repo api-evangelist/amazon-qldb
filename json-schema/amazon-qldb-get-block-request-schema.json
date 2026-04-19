@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-qldb/refs/heads/main/json-schema/amazon-qldb-get-block-request-schema.json",
+  "title": "GetBlockRequest",
+  "description": "GetBlockRequest schema from Amazon QLDB API",
+  "type": "object",
+  "properties": {
+    "BlockAddress": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ValueHolder"
+        },
+        {
+          "description": "<p>The location of the block that you want to request. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p> <p>For example: <code>{strandId:\"BlFTjlSXze9BIh1KOszcE3\",sequenceNo:14}</code>.</p>"
+        }
+      ]
+    },
+    "DigestTipAddress": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ValueHolder"
+        },
+        {
+          "description": "<p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p> <p>For example: <code>{strandId:\"BlFTjlSXze9BIh1KOszcE3\",sequenceNo:49}</code>.</p>"
+        }
+      ]
+    }
+  },
+  "required": [
+    "BlockAddress"
+  ]
+}

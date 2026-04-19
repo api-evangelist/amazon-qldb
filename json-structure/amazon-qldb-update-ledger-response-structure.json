@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-qldb/refs/heads/main/json-structure/amazon-qldb-update-ledger-response-structure.json",
+  "name": "UpdateLedgerResponse",
+  "description": "UpdateLedgerResponse schema from Amazon QLDB API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LedgerName"
+        },
+        {
+          "description": "The name of the ledger."
+        }
+      ]
+    },
+    "Arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) for the ledger."
+        }
+      ]
+    },
+    "State": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LedgerState"
+        },
+        {
+          "description": "The current status of the ledger."
+        }
+      ]
+    },
+    "CreationDateTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)"
+        }
+      ]
+    },
+    "DeletionProtection": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeletionProtection"
+        },
+        {
+          "description": "<p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p> <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>"
+        }
+      ]
+    },
+    "EncryptionDescription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LedgerEncryptionDescription"
+        },
+        {
+          "description": "Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error)."
+        }
+      ]
+    }
+  }
+}

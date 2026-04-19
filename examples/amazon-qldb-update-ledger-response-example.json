@@ -1,0 +1,8 @@
+{
+  "Name": "my-ledger",
+  "Arn": "arn:aws:qldb:us-east-1:123456789:ledger/my-ledger",
+  "State": "example-State",
+  "CreationDateTime": "2025-03-15T14:30:00Z",
+  "DeletionProtection": "example-DeletionProtection",
+  "EncryptionDescription": "example-EncryptionDescription"
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-qldb/refs/heads/main/json-schema/amazon-qldb-ledger-state-schema.json",
+  "title": "LedgerState",
+  "description": "LedgerState schema from Amazon QLDB API",
+  "type": "string",
+  "enum": [
+    "CREATING",
+    "ACTIVE",
+    "DELETING",
+    "DELETED"
+  ]
+}
