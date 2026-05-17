@@ -28,7 +28,7 @@ apis:
     url: openapi/amazon-qldb-openapi.yml
   - type: Pricing
     url: https://aws.amazon.com/qldb/pricing/
-  - type: Getting Started
+  - type: GettingStarted
     url: https://aws.amazon.com/qldb/getting-started/
   - type: FAQ
     url: https://aws.amazon.com/qldb/faqs/
@@ -39,25 +39,25 @@ common:
   url: https://aws.amazon.com/qldb/
 - type: Documentation
   url: https://docs.aws.amazon.com/qldb/
-- type: Terms of Service
+- type: TermsOfService
   url: https://aws.amazon.com/service-terms/
-- type: Privacy Policy
+- type: PrivacyPolicy
   url: https://aws.amazon.com/privacy/
 - type: Support
   url: https://aws.amazon.com/premiumsupport/
-- type: GitHub Organization
+- type: GitHubOrganization
   url: https://github.com/aws
 - type: Console
   url: https://console.aws.amazon.com/qldb/
-- type: Sign Up
+- type: SignUp
   url: https://signin.aws.amazon.com/signup?request_type=register
 - type: Login
   url: https://aws.amazon.com/console/
-- type: Status
+- type: StatusPage
   url: https://health.aws.amazon.com/health/status
 - type: Contact
   url: https://aws.amazon.com/contact-us/
-- type: JSON-LD
+- type: JSONLD
   url: json-ld/amazon-qldb-context.jsonld
 - type: JSONSchema
   url: json-schema/amazon-qldb-cancel-journal-kinesis-stream-response-schema.json
