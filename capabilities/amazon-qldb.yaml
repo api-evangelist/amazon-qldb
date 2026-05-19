@@ -1,0 +1,999 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Amazon QLDB
+  description: 'Amazon QLDB. 20 operations. Lead operation: Amazon QLDB List Journal S3 Exports. Self-contained Naftiko capability
+    covering one Amazon Qldb business surface.'
+  tags:
+  - Amazon Qldb
+  - Amazon QLDB
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_QLDB_API_KEY: AMAZON_QLDB_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-qldb
+    baseUri: http://qldb.{region}.amazonaws.com
+    description: Amazon QLDB business capability. Self-contained, no shared references.
+    resources:
+    - name: journal-s3-exports
+      path: /journal-s3-exports
+      operations:
+      - name: listjournals3exports
+        method: GET
+        description: Amazon QLDB List Journal S3 Exports
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: max_results
+          in: query
+          type: integer
+          description: The maximum number of results to return in a single <code>ListJournalS3Exports</code> request. (The
+            actual number of results returned might be fewer.)
+        - name: next_token
+          in: query
+          type: string
+          description: A pagination token, indicating that you want to retrieve the next page of results. If you received
+            a value for <code>NextToken</code> in the response from a pre
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+    - name: ledgers
+      path: /ledgers
+      operations:
+      - name: createledger
+        method: POST
+        description: Amazon QLDB Create Ledger
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: listledgers
+        method: GET
+        description: Amazon QLDB List Ledgers
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: max_results
+          in: query
+          type: integer
+          description: The maximum number of results to return in a single <code>ListLedgers</code> request. (The actual number
+            of results returned might be fewer.)
+        - name: next_token
+          in: query
+          type: string
+          description: A pagination token, indicating that you want to retrieve the next page of results. If you received
+            a value for <code>NextToken</code> in the response from a pre
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+    - name: ledgers-name
+      path: /ledgers/{name}
+      operations:
+      - name: deleteledger
+        method: DELETE
+        description: Amazon QLDB Delete Ledger
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: The name of the ledger that you want to delete.
+          required: true
+      - name: describeledger
+        method: GET
+        description: Amazon QLDB Describe Ledger
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: The name of the ledger that you want to describe.
+          required: true
+      - name: updateledger
+        method: PATCH
+        description: Amazon QLDB Update Ledger
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: The name of the ledger.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: ledgers-name-block
+      path: /ledgers/{name}/block
+      operations:
+      - name: getblock
+        method: POST
+        description: Amazon QLDB Get Block
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: The name of the ledger.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: ledgers-name-digest
+      path: /ledgers/{name}/digest
+      operations:
+      - name: getdigest
+        method: POST
+        description: Amazon QLDB Get Digest
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: The name of the ledger.
+          required: true
+    - name: ledgers-name-journal-kinesis-streams
+      path: /ledgers/{name}/journal-kinesis-streams
+      operations:
+      - name: listjournalkinesisstreamsforledger
+        method: GET
+        description: Amazon QLDB List Journal Kinesis Streams For Ledger
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: The name of the ledger.
+          required: true
+        - name: max_results
+          in: query
+          type: integer
+          description: The maximum number of results to return in a single <code>ListJournalKinesisStreamsForLedger</code>
+            request. (The actual number of results returned might be few
+        - name: next_token
+          in: query
+          type: string
+          description: A pagination token, indicating that you want to retrieve the next page of results. If you received
+            a value for <code>NextToken</code> in the response from a pre
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+      - name: streamjournaltokinesis
+        method: POST
+        description: Amazon QLDB Stream Journal To Kinesis
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: The name of the ledger.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: ledgers-name-journal-kinesis-streams-streamId
+      path: /ledgers/{name}/journal-kinesis-streams/{streamId}
+      operations:
+      - name: canceljournalkinesisstream
+        method: DELETE
+        description: Amazon QLDB Cancel Journal Kinesis Stream
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: The name of the ledger.
+          required: true
+        - name: streamId
+          in: path
+          type: string
+          description: The UUID (represented in Base62-encoded text) of the QLDB journal stream to be canceled.
+          required: true
+      - name: describejournalkinesisstream
+        method: GET
+        description: Amazon QLDB Describe Journal Kinesis Stream
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: The name of the ledger.
+          required: true
+        - name: streamId
+          in: path
+          type: string
+          description: The UUID (represented in Base62-encoded text) of the QLDB journal stream to describe.
+          required: true
+    - name: ledgers-name-journal-s3-exports
+      path: /ledgers/{name}/journal-s3-exports
+      operations:
+      - name: exportjournaltos3
+        method: POST
+        description: Amazon QLDB Export Journal To S3
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: The name of the ledger.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: listjournals3exportsforledger
+        method: GET
+        description: Amazon QLDB List Journal S3 Exports For Ledger
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: The name of the ledger.
+          required: true
+        - name: max_results
+          in: query
+          type: integer
+          description: The maximum number of results to return in a single <code>ListJournalS3ExportsForLedger</code> request.
+            (The actual number of results returned might be fewer.)
+        - name: next_token
+          in: query
+          type: string
+          description: A pagination token, indicating that you want to retrieve the next page of results. If you received
+            a value for <code>NextToken</code> in the response from a pre
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+    - name: ledgers-name-journal-s3-exports-exportId
+      path: /ledgers/{name}/journal-s3-exports/{exportId}
+      operations:
+      - name: describejournals3export
+        method: GET
+        description: Amazon QLDB Describe Journal S3 Export
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: The name of the ledger.
+          required: true
+        - name: exportId
+          in: path
+          type: string
+          description: The UUID (represented in Base62-encoded text) of the journal export job to describe.
+          required: true
+    - name: ledgers-name-permissions-mode
+      path: /ledgers/{name}/permissions-mode
+      operations:
+      - name: updateledgerpermissionsmode
+        method: PATCH
+        description: Amazon QLDB Update Ledger Permissions Mode
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: The name of the ledger.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: ledgers-name-revision
+      path: /ledgers/{name}/revision
+      operations:
+      - name: getrevision
+        method: POST
+        description: Amazon QLDB Get Revision
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: The name of the ledger.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: tags-resourceArn
+      path: /tags/{resourceArn}
+      operations:
+      - name: listtagsforresource
+        method: GET
+        description: Amazon QLDB List Tags For Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: path
+          type: string
+          description: <p>The Amazon Resource Name (ARN) for which to list the tags. For example:</p> <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
+            </p>
+          required: true
+      - name: tagresource
+        method: POST
+        description: Amazon QLDB Tag Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: path
+          type: string
+          description: '<p>The Amazon Resource Name (ARN) to which you want to add the tags. For example:</p> <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> '
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: tags-resourceArn}#tagKeys
+      path: /tags/{resourceArn}#tagKeys
+      operations:
+      - name: untagresource
+        method: DELETE
+        description: Amazon QLDB Untag Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: path
+          type: string
+          description: <p>The Amazon Resource Name (ARN) from which to remove the tags. For example:</p> <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
+            </p>
+          required: true
+        - name: tagKeys
+          in: query
+          type: array
+          description: The list of tag keys to remove.
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AMAZON_QLDB_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: amazon-qldb-rest
+    port: 8080
+    description: REST adapter for Amazon QLDB. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/journal-s3-exports
+      name: journal-s3-exports
+      description: REST surface for journal-s3-exports.
+      operations:
+      - method: GET
+        name: listjournals3exports
+        description: Amazon QLDB List Journal S3 Exports
+        call: amazon-qldb.listjournals3exports
+        with:
+          max_results: rest.max_results
+          next_token: rest.next_token
+          MaxResults: rest.MaxResults
+          NextToken: rest.NextToken
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/ledgers
+      name: ledgers
+      description: REST surface for ledgers.
+      operations:
+      - method: POST
+        name: createledger
+        description: Amazon QLDB Create Ledger
+        call: amazon-qldb.createledger
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: listledgers
+        description: Amazon QLDB List Ledgers
+        call: amazon-qldb.listledgers
+        with:
+          max_results: rest.max_results
+          next_token: rest.next_token
+          MaxResults: rest.MaxResults
+          NextToken: rest.NextToken
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/ledgers/{name}
+      name: ledgers-name
+      description: REST surface for ledgers-name.
+      operations:
+      - method: DELETE
+        name: deleteledger
+        description: Amazon QLDB Delete Ledger
+        call: amazon-qldb.deleteledger
+        with:
+          name: rest.name
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: describeledger
+        description: Amazon QLDB Describe Ledger
+        call: amazon-qldb.describeledger
+        with:
+          name: rest.name
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updateledger
+        description: Amazon QLDB Update Ledger
+        call: amazon-qldb.updateledger
+        with:
+          name: rest.name
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/ledgers/{name}/block
+      name: ledgers-name-block
+      description: REST surface for ledgers-name-block.
+      operations:
+      - method: POST
+        name: getblock
+        description: Amazon QLDB Get Block
+        call: amazon-qldb.getblock
+        with:
+          name: rest.name
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/ledgers/{name}/digest
+      name: ledgers-name-digest
+      description: REST surface for ledgers-name-digest.
+      operations:
+      - method: POST
+        name: getdigest
+        description: Amazon QLDB Get Digest
+        call: amazon-qldb.getdigest
+        with:
+          name: rest.name
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/ledgers/{name}/journal-kinesis-streams
+      name: ledgers-name-journal-kinesis-streams
+      description: REST surface for ledgers-name-journal-kinesis-streams.
+      operations:
+      - method: GET
+        name: listjournalkinesisstreamsforledger
+        description: Amazon QLDB List Journal Kinesis Streams For Ledger
+        call: amazon-qldb.listjournalkinesisstreamsforledger
+        with:
+          name: rest.name
+          max_results: rest.max_results
+          next_token: rest.next_token
+          MaxResults: rest.MaxResults
+          NextToken: rest.NextToken
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: streamjournaltokinesis
+        description: Amazon QLDB Stream Journal To Kinesis
+        call: amazon-qldb.streamjournaltokinesis
+        with:
+          name: rest.name
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/ledgers/{name}/journal-kinesis-streams/{streamid}
+      name: ledgers-name-journal-kinesis-streams-streamid
+      description: REST surface for ledgers-name-journal-kinesis-streams-streamId.
+      operations:
+      - method: DELETE
+        name: canceljournalkinesisstream
+        description: Amazon QLDB Cancel Journal Kinesis Stream
+        call: amazon-qldb.canceljournalkinesisstream
+        with:
+          name: rest.name
+          streamId: rest.streamId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: describejournalkinesisstream
+        description: Amazon QLDB Describe Journal Kinesis Stream
+        call: amazon-qldb.describejournalkinesisstream
+        with:
+          name: rest.name
+          streamId: rest.streamId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/ledgers/{name}/journal-s3-exports
+      name: ledgers-name-journal-s3-exports
+      description: REST surface for ledgers-name-journal-s3-exports.
+      operations:
+      - method: POST
+        name: exportjournaltos3
+        description: Amazon QLDB Export Journal To S3
+        call: amazon-qldb.exportjournaltos3
+        with:
+          name: rest.name
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: listjournals3exportsforledger
+        description: Amazon QLDB List Journal S3 Exports For Ledger
+        call: amazon-qldb.listjournals3exportsforledger
+        with:
+          name: rest.name
+          max_results: rest.max_results
+          next_token: rest.next_token
+          MaxResults: rest.MaxResults
+          NextToken: rest.NextToken
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/ledgers/{name}/journal-s3-exports/{exportid}
+      name: ledgers-name-journal-s3-exports-exportid
+      description: REST surface for ledgers-name-journal-s3-exports-exportId.
+      operations:
+      - method: GET
+        name: describejournals3export
+        description: Amazon QLDB Describe Journal S3 Export
+        call: amazon-qldb.describejournals3export
+        with:
+          name: rest.name
+          exportId: rest.exportId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/ledgers/{name}/permissions-mode
+      name: ledgers-name-permissions-mode
+      description: REST surface for ledgers-name-permissions-mode.
+      operations:
+      - method: PATCH
+        name: updateledgerpermissionsmode
+        description: Amazon QLDB Update Ledger Permissions Mode
+        call: amazon-qldb.updateledgerpermissionsmode
+        with:
+          name: rest.name
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/ledgers/{name}/revision
+      name: ledgers-name-revision
+      description: REST surface for ledgers-name-revision.
+      operations:
+      - method: POST
+        name: getrevision
+        description: Amazon QLDB Get Revision
+        call: amazon-qldb.getrevision
+        with:
+          name: rest.name
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/tags/{resourcearn}
+      name: tags-resourcearn
+      description: REST surface for tags-resourceArn.
+      operations:
+      - method: GET
+        name: listtagsforresource
+        description: Amazon QLDB List Tags For Resource
+        call: amazon-qldb.listtagsforresource
+        with:
+          resourceArn: rest.resourceArn
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: tagresource
+        description: Amazon QLDB Tag Resource
+        call: amazon-qldb.tagresource
+        with:
+          resourceArn: rest.resourceArn
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/tags/resourcearn-tagkeys
+      name: tags-resourcearn-tagkeys
+      description: REST surface for tags-resourceArn}#tagKeys.
+      operations:
+      - method: DELETE
+        name: untagresource
+        description: Amazon QLDB Untag Resource
+        call: amazon-qldb.untagresource
+        with:
+          resourceArn: rest.resourceArn
+          tagKeys: rest.tagKeys
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-qldb-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Amazon QLDB. One tool per consumed operation, routed inline through this capability's consumes
+      block.
+    tools:
+    - name: amazon-qldb-list-journal-s3
+      description: Amazon QLDB List Journal S3 Exports
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-qldb.listjournals3exports
+      with:
+        max_results: tools.max_results
+        next_token: tools.next_token
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-qldb-create-ledger
+      description: Amazon QLDB Create Ledger
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-qldb.createledger
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-qldb-list-ledgers
+      description: Amazon QLDB List Ledgers
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-qldb.listledgers
+      with:
+        max_results: tools.max_results
+        next_token: tools.next_token
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-qldb-delete-ledger
+      description: Amazon QLDB Delete Ledger
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-qldb.deleteledger
+      with:
+        name: tools.name
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-qldb-describe-ledger
+      description: Amazon QLDB Describe Ledger
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-qldb.describeledger
+      with:
+        name: tools.name
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-qldb-update-ledger
+      description: Amazon QLDB Update Ledger
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: amazon-qldb.updateledger
+      with:
+        name: tools.name
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-qldb-get-block
+      description: Amazon QLDB Get Block
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-qldb.getblock
+      with:
+        name: tools.name
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-qldb-get-digest
+      description: Amazon QLDB Get Digest
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-qldb.getdigest
+      with:
+        name: tools.name
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-qldb-list-journal-kinesis
+      description: Amazon QLDB List Journal Kinesis Streams For Ledger
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-qldb.listjournalkinesisstreamsforledger
+      with:
+        name: tools.name
+        max_results: tools.max_results
+        next_token: tools.next_token
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-qldb-stream-journal-kinesis
+      description: Amazon QLDB Stream Journal To Kinesis
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-qldb.streamjournaltokinesis
+      with:
+        name: tools.name
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-qldb-cancel-journal-kinesis
+      description: Amazon QLDB Cancel Journal Kinesis Stream
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-qldb.canceljournalkinesisstream
+      with:
+        name: tools.name
+        streamId: tools.streamId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-qldb-describe-journal-kinesis
+      description: Amazon QLDB Describe Journal Kinesis Stream
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-qldb.describejournalkinesisstream
+      with:
+        name: tools.name
+        streamId: tools.streamId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-qldb-export-journal-s3
+      description: Amazon QLDB Export Journal To S3
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-qldb.exportjournaltos3
+      with:
+        name: tools.name
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-qldb-list-journal-s3-2
+      description: Amazon QLDB List Journal S3 Exports For Ledger
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-qldb.listjournals3exportsforledger
+      with:
+        name: tools.name
+        max_results: tools.max_results
+        next_token: tools.next_token
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-qldb-describe-journal-s3
+      description: Amazon QLDB Describe Journal S3 Export
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-qldb.describejournals3export
+      with:
+        name: tools.name
+        exportId: tools.exportId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-qldb-update-ledger-permissions
+      description: Amazon QLDB Update Ledger Permissions Mode
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: amazon-qldb.updateledgerpermissionsmode
+      with:
+        name: tools.name
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-qldb-get-revision
+      description: Amazon QLDB Get Revision
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-qldb.getrevision
+      with:
+        name: tools.name
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-qldb-list-tags-resource
+      description: Amazon QLDB List Tags For Resource
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-qldb.listtagsforresource
+      with:
+        resourceArn: tools.resourceArn
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-qldb-tag-resource
+      description: Amazon QLDB Tag Resource
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-qldb.tagresource
+      with:
+        resourceArn: tools.resourceArn
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-qldb-untag-resource
+      description: Amazon QLDB Untag Resource
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-qldb.untagresource
+      with:
+        resourceArn: tools.resourceArn
+        tagKeys: tools.tagKeys
+      outputParameters:
+      - type: object
+        mapping: $.

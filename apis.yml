@@ -1,18 +1,17 @@
 name: Amazon QLDB
-description: Amazon Quantum Ledger Database (QLDB) is a fully managed ledger database that provides a transparent, immutable, and cryptographically verifiable transaction log. QLDB tracks each and 
-  every application data change and maintains a complete and verifiable history of changes over time, making it ideal for systems of record where data integrity and auditability are critical.
+description: Amazon Quantum Ledger Database (QLDB) is a fully managed ledger database that provides a transparent, immutable,
+  and cryptographically verifiable transaction log. QLDB tracks each and every application data change and maintains a complete
+  and verifiable history of changes over time, making it ideal for systems of record where data integrity and auditability
+  are critical.
 image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
 url: https://aws.amazon.com/qldb/
 created: '2024-01-15'
-modified: '2026-04-19'
+modified: '2026-05-19'
 apis:
 - name: Amazon QLDB API
-  description: >-
-    The Amazon QLDB API provides programmatic access to manage ledger databases
-    with immutable, transparent, and cryptographically verifiable transaction
-    logs. It enables developers to create and manage ledgers, submit PartiQL
-    statements, stream journal data, and export ledger blocks for verification
-    and auditing purposes.
+  description: The Amazon QLDB API provides programmatic access to manage ledger databases with immutable, transparent, and
+    cryptographically verifiable transaction logs. It enables developers to create and manage ledgers, submit PartiQL statements,
+    stream journal data, and export ledger blocks for verification and auditing purposes.
   image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
   humanURL: https://aws.amazon.com/qldb/
   baseURL: https://qldb.amazonaws.com
@@ -32,6 +31,8 @@ apis:
     url: https://aws.amazon.com/qldb/getting-started/
   - type: FAQ
     url: https://aws.amazon.com/qldb/faqs/
+  - type: NaftikoCapability
+    url: capabilities/amazon-qldb.yaml
 common:
 - type: Portal
   url: https://aws.amazon.com/
@@ -289,8 +290,6 @@ common:
   url: examples/amazon-qldb-update-ledger-response-example.json
 - type: Example
   url: examples/amazon-qldb-value-holder-example.json
-- type: NaftikoCapability
-  url: capabilities/shared/amazon-qldb.yaml
 - type: SpectralRules
   url: rules/amazon-qldb-spectral-rules.yml
 maintainers:
