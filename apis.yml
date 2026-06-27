@@ -31,7 +31,7 @@ apis:
     url: https://aws.amazon.com/qldb/getting-started/
   - type: FAQ
     url: https://aws.amazon.com/qldb/faqs/
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/amazon-qldb.yaml
 common:
 - type: Portal
@@ -50,7 +50,7 @@ common:
   url: https://github.com/aws
 - type: Console
   url: https://console.aws.amazon.com/qldb/
-- type: SignUp
+- type: Signup
   url: https://signin.aws.amazon.com/signup?request_type=register
 - type: Login
   url: https://aws.amazon.com/console/
@@ -224,71 +224,71 @@ common:
   url: json-structure/amazon-qldb-update-ledger-response-structure.json
 - type: JSONStructure
   url: json-structure/amazon-qldb-value-holder-structure.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-cancel-journal-kinesis-stream-response-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-create-ledger-request-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-create-ledger-response-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-describe-journal-kinesis-stream-response-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-describe-journal-s3export-response-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-describe-ledger-response-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-export-journal-to-s3request-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-export-journal-to-s3response-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-get-block-request-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-get-block-response-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-get-digest-response-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-get-revision-request-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-get-revision-response-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-journal-kinesis-stream-description-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-journal-s3export-description-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-kinesis-configuration-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-ledger-encryption-description-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-ledger-summary-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-list-journal-kinesis-streams-for-ledger-response-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-list-journal-s3exports-for-ledger-response-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-list-journal-s3exports-response-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-list-ledgers-response-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-list-tags-for-resource-response-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-s3encryption-configuration-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-s3export-configuration-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-stream-journal-to-kinesis-request-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-stream-journal-to-kinesis-response-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-tag-resource-request-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-update-ledger-permissions-mode-request-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-update-ledger-permissions-mode-response-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-update-ledger-request-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-update-ledger-response-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-qldb-value-holder-example.json
 - type: SpectralRules
   url: rules/amazon-qldb-spectral-rules.yml
