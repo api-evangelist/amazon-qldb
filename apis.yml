@@ -34,6 +34,14 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-qldb.yaml
 common:
+- type: TrustCenter
+  url: security/amazon-qldb-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/amazon-qldb-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/amazon-qldb-domain-security.yml
+- type: Authentication
+  url: authentication/amazon-qldb-authentication.yml
 - type: Portal
   url: https://aws.amazon.com/
 - type: Website
