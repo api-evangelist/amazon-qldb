@@ -34,6 +34,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-qldb.yaml
 common:
+- type: AgenticAccess
+  url: agentic-access/amazon-qldb-agentic-access.yml
 - type: TrustCenter
   url: security/amazon-qldb-trust-center.yml
 - type: VulnerabilityDisclosure
