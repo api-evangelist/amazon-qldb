@@ -1,0 +1,373 @@
+openapi: 3.0.0
+info:
+  version: 2019-01-02
+  x-release: v4
+  title: Amazon QLDB Journal S3 Exports API
+  description: The control plane for Amazon QLDB
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: qldb
+  x-aws-signingName: qldb
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/qldb-2019-01-02.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://qldb.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The QLDB multi-region endpoint
+- url: https://qldb.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The QLDB multi-region endpoint
+- url: http://qldb.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The QLDB endpoint for China (Beijing) and China (Ningxia)
+- url: https://qldb.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The QLDB endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Journal S3 Exports
+paths:
+  /journal-s3-exports:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: ListJournalS3Exports
+      description: <p>Returns an array of journal export job descriptions for all ledgers that are associated with the current Amazon Web Services account and Region.</p> <p>This action returns a maximum of <code>MaxResults</code> items, and is paginated so that you can retrieve all the items by calling <code>ListJournalS3Exports</code> multiple times.</p> <p>This action does not return any expired export jobs. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListJournalS3ExportsResponse'
+      parameters:
+      - name: max_results
+        in: query
+        required: false
+        description: The maximum number of results to return in a single <code>ListJournalS3Exports</code> request. (The actual number of results returned might be fewer.)
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 100
+      - name: next_token
+        in: query
+        required: false
+        description: A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalS3Exports</code> call, then you should use that value as input here.
+        schema:
+          type: string
+          pattern: ^[A-Za-z-0-9+/=]+$
+          minLength: 4
+          maxLength: 1024
+      - name: MaxResults
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: NextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      summary: Amazon QLDB List Journal S3 Exports
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Journal S3 Exports
+components:
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    S3EncryptionConfiguration:
+      type: object
+      required:
+      - ObjectEncryptionType
+      properties:
+        ObjectEncryptionType:
+          allOf:
+          - $ref: '#/components/schemas/S3ObjectEncryptionType'
+          - description: <p>The Amazon S3 object encryption type.</p> <p>To learn more about server-side encryption options in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data Using Server-Side Encryption</a> in the <i>Amazon S3 Developer Guide</i>.</p>
+        KmsKeyArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: <p>The Amazon Resource Name (ARN) of a symmetric key in Key Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p> <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p> <p> <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the <code>ObjectEncryptionType</code>.</p>
+      description: The encryption settings that are used by a journal export job to write data in an Amazon Simple Storage Service (Amazon S3) bucket.
+    S3Prefix:
+      type: string
+      minLength: 0
+      maxLength: 128
+    NextToken:
+      type: string
+      pattern: ^[A-Za-z-0-9+/=]+$
+      minLength: 4
+      maxLength: 1024
+    Arn:
+      type: string
+      minLength: 20
+      maxLength: 1600
+    S3ObjectEncryptionType:
+      type: string
+      enum:
+      - SSE_KMS
+      - SSE_S3
+      - NO_ENCRYPTION
+    OutputFormat:
+      type: string
+      enum:
+      - ION_BINARY
+      - ION_TEXT
+      - JSON
+    JournalS3ExportList:
+      type: array
+      items:
+        $ref: '#/components/schemas/JournalS3ExportDescription'
+    S3ExportConfiguration:
+      type: object
+      required:
+      - Bucket
+      - Prefix
+      - EncryptionConfiguration
+      properties:
+        Bucket:
+          allOf:
+          - $ref: '#/components/schemas/S3Bucket'
+          - description: <p>The Amazon S3 bucket name in which a journal export job writes the journal contents.</p> <p>The bucket name must comply with the Amazon S3 bucket naming conventions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the <i>Amazon S3 Developer Guide</i>.</p>
+        Prefix:
+          allOf:
+          - $ref: '#/components/schemas/S3Prefix'
+          - description: <p>The prefix for the Amazon S3 bucket in which a journal export job writes the journal contents.</p> <p>The prefix must comply with Amazon S3 key naming rules and restrictions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>The following are examples of valid <code>Prefix</code> values:</p> <ul> <li> <p> <code>JournalExports-ForMyLedger/Testing/</code> </p> </li> <li> <p> <code>JournalExports</code> </p> </li> <li> <p> <code>My:Tests/</code> </p> </li> </ul>
+        EncryptionConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/S3EncryptionConfiguration'
+          - description: The encryption settings that are used by a journal export job to write data in an Amazon S3 bucket.
+      description: The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.
+    JournalS3ExportDescription:
+      type: object
+      required:
+      - LedgerName
+      - ExportId
+      - ExportCreationTime
+      - Status
+      - InclusiveStartTime
+      - ExclusiveEndTime
+      - S3ExportConfiguration
+      - RoleArn
+      properties:
+        LedgerName:
+          allOf:
+          - $ref: '#/components/schemas/LedgerName'
+          - description: The name of the ledger.
+        ExportId:
+          allOf:
+          - $ref: '#/components/schemas/UniqueId'
+          - description: The UUID (represented in Base62-encoded text) of the journal export job.
+        ExportCreationTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date and time, in epoch time format, when the export job was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/ExportStatus'
+          - description: The current state of the journal export job.
+        InclusiveStartTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The inclusive start date and time for the range of journal contents that was specified in the original export request.
+        ExclusiveEndTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The exclusive end date and time for the range of journal contents that was specified in the original export request.
+        S3ExportConfiguration:
+          $ref: '#/components/schemas/S3ExportConfiguration'
+        RoleArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p> <ul> <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li> </ul>
+        OutputFormat:
+          allOf:
+          - $ref: '#/components/schemas/OutputFormat'
+          - description: The output format of the exported journal data.
+      description: Information about a journal export job, including the ledger name, export ID, creation time, current status, and the parameters of the original export creation request.
+    ExportStatus:
+      type: string
+      enum:
+      - IN_PROGRESS
+      - COMPLETED
+      - CANCELLED
+    S3Bucket:
+      type: string
+      pattern: ^[A-Za-z-0-9-_.]+$
+      minLength: 3
+      maxLength: 255
+    Timestamp:
+      type: string
+      format: date-time
+    LedgerName:
+      type: string
+      pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
+      minLength: 1
+      maxLength: 32
+    ListJournalS3ExportsResponse:
+      type: object
+      properties:
+        JournalS3Exports:
+          allOf:
+          - $ref: '#/components/schemas/JournalS3ExportList'
+          - description: The array of journal export job descriptions for all ledgers that are associated with the current Amazon Web Services account and Region.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: <ul> <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li> <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalS3Exports</code> call.</p> </li> </ul>
+    UniqueId:
+      type: string
+      pattern: ^[A-Za-z-0-9]+$
+      minLength: 22
+      maxLength: 22
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/qldb/
+x-hasEquivalentPaths: true
