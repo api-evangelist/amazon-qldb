@@ -3,28 +3,76 @@ description: Amazon Quantum Ledger Database (QLDB) is a fully managed ledger dat
   and cryptographically verifiable transaction log. QLDB tracks each and every application data change and maintains a complete
   and verifiable history of changes over time, making it ideal for systems of record where data integrity and auditability
   are critical.
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
 url: https://aws.amazon.com/qldb/
 created: '2024-01-15'
 modified: '2026-05-19'
 apis:
-- name: Amazon QLDB API
-  description: The Amazon QLDB API provides programmatic access to manage ledger databases with immutable, transparent, and
-    cryptographically verifiable transaction logs. It enables developers to create and manage ledgers, submit PartiQL statements,
-    stream journal data, and export ledger blocks for verification and auditing purposes.
-  image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
+- aid: amazon-qldb:amazon-qldb-journal-s3-exports-api
+  name: Amazon QLDB Journal S3 Exports API
+  description: The Journal S3 Exports API from Amazon QLDB — 1 operation(s) for journal s3 exports.
   humanURL: https://aws.amazon.com/qldb/
   baseURL: https://qldb.amazonaws.com
   tags:
-  - AWS
-  - Blockchain
-  - Database
-  - Ledger
+  - Journal S3 Exports
   properties:
+  - type: OpenAPI
+    url: openapi/amazon-qldb-journal-s3-exports-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/qldb/
+  - type: Pricing
+    url: https://aws.amazon.com/qldb/pricing/
+  - type: GettingStarted
+    url: https://aws.amazon.com/qldb/getting-started/
+  - type: FAQ
+    url: https://aws.amazon.com/qldb/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-qldb.yaml
+- aid: amazon-qldb:amazon-qldb-ledgers-api
+  name: Amazon QLDB Ledgers API
+  description: The Ledgers API from Amazon QLDB — 10 operation(s) for ledgers.
+  humanURL: https://aws.amazon.com/qldb/
+  baseURL: https://qldb.amazonaws.com
+  tags:
+  - Ledgers
+  properties:
   - type: OpenAPI
-    url: openapi/amazon-qldb-openapi.yml
+    url: openapi/amazon-qldb-ledgers-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/qldb/
+  - type: Pricing
+    url: https://aws.amazon.com/qldb/pricing/
+  - type: GettingStarted
+    url: https://aws.amazon.com/qldb/getting-started/
+  - type: FAQ
+    url: https://aws.amazon.com/qldb/faqs/
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-qldb.yaml
+- aid: amazon-qldb:amazon-qldb-tags-api
+  name: Amazon QLDB Tags API
+  description: The Tags API from Amazon QLDB — 2 operation(s) for tags.
+  humanURL: https://aws.amazon.com/qldb/
+  baseURL: https://qldb.amazonaws.com
+  tags:
+  - Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-qldb-tags-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/qldb/
   - type: Pricing
     url: https://aws.amazon.com/qldb/pricing/
   - type: GettingStarted
@@ -34,6 +82,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-qldb.yaml
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/amazon-qldb/overview
 - type: AgenticAccess
   url: agentic-access/amazon-qldb-agentic-access.yml
 - type: TrustCenter
