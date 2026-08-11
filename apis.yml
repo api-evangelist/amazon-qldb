@@ -39,8 +39,6 @@ apis:
     url: https://aws.amazon.com/qldb/getting-started/
   - type: FAQ
     url: https://aws.amazon.com/qldb/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-qldb.yaml
 - aid: amazon-qldb:amazon-qldb-ledgers-api
   name: Amazon QLDB Ledgers API
   description: The Ledgers API from Amazon QLDB — 10 operation(s) for ledgers.
@@ -59,8 +57,6 @@ apis:
     url: https://aws.amazon.com/qldb/getting-started/
   - type: FAQ
     url: https://aws.amazon.com/qldb/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-qldb.yaml
 - aid: amazon-qldb:amazon-qldb-tags-api
   name: Amazon QLDB Tags API
   description: The Tags API from Amazon QLDB — 2 operation(s) for tags.
@@ -79,8 +75,6 @@ apis:
     url: https://aws.amazon.com/qldb/getting-started/
   - type: FAQ
     url: https://aws.amazon.com/qldb/faqs/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-qldb.yaml
 common:
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-qldb/overview
