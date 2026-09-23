@@ -1,8 +1,8 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2019-01-02
   x-release: v4
-  title: Amazon QLDB Journal S3 Exports Tags API
+  title: Amazon QLDB Tags API
   description: The control plane for Amazon QLDB
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/qldb-2019-01-02.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -162,7 +163,10 @@ paths:
       - Tags
     post:
       operationId: TagResource
-      description: <p>Adds one or more tags to a specified Amazon QLDB resource.</p> <p>A resource can have up to 50 tags. If you try to create more than 50 tags for a resource, your request fails and returns an error.</p>
+      description: 'Adds one or more tags to a specified Amazon QLDB resource.
+
+
+        A resource can have up to 50 tags. If you try to create more than 50 tags for a resource, your request fails and returns an error.'
       responses:
         '200':
           description: Success
@@ -271,18 +275,6 @@ paths:
       - Tags
 components:
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
       in: header
@@ -295,14 +287,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -313,8 +299,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    ResourceNotFoundException: {}
+    InvalidParameterException: {}
     TagKey:
       type: string
       minLength: 1
@@ -322,13 +326,20 @@ components:
     TagResourceResponse:
       type: object
       properties: {}
+    UntagResourceResponse:
+      type: object
+      properties: {}
+    ResourceNotFoundException: {}
+    Tags:
+      type: object
+      minProperties: 0
+      maxProperties: 200
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
     TagValue:
       type: string
       minLength: 0
       maxLength: 256
-    UntagResourceResponse:
-      type: object
-      properties: {}
     ListTagsForResourceResponse:
       type: object
       properties:
@@ -336,13 +347,6 @@ components:
           allOf:
           - $ref: '#/components/schemas/Tags'
           - description: The tags that are currently associated with the specified Amazon QLDB resource.
-    InvalidParameterException: {}
-    Tags:
-      type: object
-      minProperties: 0
-      maxProperties: 200
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
   securitySchemes:
     hmac:
       type: apiKey

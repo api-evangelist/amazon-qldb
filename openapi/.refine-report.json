@@ -1,9 +1,7 @@
 {
   "provider": "amazon-qldb",
   "sources": [
-    "amazon-qldb-journal-s3-exports-api-openapi.yml",
-    "amazon-qldb-ledgers-api-openapi.yml",
-    "amazon-qldb-tags-api-openapi.yml"
+    "_original/amazon-qldb-openapi-original.yaml"
   ],
   "outputs": [
     "amazon-qldb-journal-s3-exports-api-openapi.yml",
@@ -14,7 +12,36 @@
   "errors": [],
   "warnings": [],
   "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "amazon-qldb-openapi-original.yaml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "amazon-qldb-openapi-original.yaml: tagged paths DELETE /ledgers/{name}/journal-kinesis-streams/{streamId} -> Ledgers",
+    "amazon-qldb-openapi-original.yaml: tagged paths GET /ledgers/{name}/journal-kinesis-streams/{streamId} -> Ledgers",
+    "amazon-qldb-openapi-original.yaml: tagged paths POST /ledgers -> Ledgers",
+    "amazon-qldb-openapi-original.yaml: tagged paths GET /ledgers -> Ledgers",
+    "amazon-qldb-openapi-original.yaml: tagged paths DELETE /ledgers/{name} -> Ledgers",
+    "amazon-qldb-openapi-original.yaml: tagged paths GET /ledgers/{name} -> Ledgers",
+    "amazon-qldb-openapi-original.yaml: tagged paths PATCH /ledgers/{name} -> Ledgers",
+    "amazon-qldb-openapi-original.yaml: tagged paths GET /ledgers/{name}/journal-s3-exports/{exportId} -> Ledgers",
+    "amazon-qldb-openapi-original.yaml: tagged paths POST /ledgers/{name}/journal-s3-exports -> Ledgers",
+    "amazon-qldb-openapi-original.yaml: tagged paths GET /ledgers/{name}/journal-s3-exports -> Ledgers",
+    "amazon-qldb-openapi-original.yaml: tagged paths POST /ledgers/{name}/block -> Ledgers",
+    "amazon-qldb-openapi-original.yaml: tagged paths POST /ledgers/{name}/digest -> Ledgers",
+    "amazon-qldb-openapi-original.yaml: tagged paths POST /ledgers/{name}/revision -> Ledgers",
+    "amazon-qldb-openapi-original.yaml: tagged paths GET /ledgers/{name}/journal-kinesis-streams -> Ledgers",
+    "amazon-qldb-openapi-original.yaml: tagged paths POST /ledgers/{name}/journal-kinesis-streams -> Ledgers",
+    "amazon-qldb-openapi-original.yaml: tagged paths GET /journal-s3-exports -> Journal S3 Exports",
+    "amazon-qldb-openapi-original.yaml: tagged paths GET /tags/{resourceArn} -> Tags",
+    "amazon-qldb-openapi-original.yaml: tagged paths POST /tags/{resourceArn} -> Tags",
+    "amazon-qldb-openapi-original.yaml: tagged paths DELETE /tags/{resourceArn}#tagKeys -> Tags",
+    "amazon-qldb-openapi-original.yaml: tagged paths PATCH /ledgers/{name}/permissions-mode -> Ledgers",
+    "amazon-qldb-openapi-original.yaml: declared missing tag: Journal S3 Exports",
+    "amazon-qldb-openapi-original.yaml: declared missing tag: Ledgers",
+    "amazon-qldb-openapi-original.yaml: declared missing tag: Tags",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "amazon-qldb-journal-s3-exports-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-qldb-ledgers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-qldb-tags-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
