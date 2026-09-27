@@ -369,5 +369,5 @@ tags:
 - Blockchain
 - Database
 - Ledger
-x-parent: aws
+x-parent: amazon-web-services
 x-relationship: product
