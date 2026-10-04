@@ -1,0 +1,25 @@
+slug: amazon-qldb
+provider: Amazon QLDB
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Ledgers
+  spec_file: amazon-qldb-ledgers-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: '"POST /ledgers CreateLedger Amazon QLDB Create Ledger", "DELETE /ledgers/{name} DeleteLedger"'
+  reason: Provisioning and lifecycle of managed ledger-database instances (a cloud data store), i.e. IT
+    infrastructure management. 'Ledger' here is a cryptographically verifiable database, not a general
+    ledger in the accounting sense.

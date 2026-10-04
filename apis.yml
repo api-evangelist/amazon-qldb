@@ -90,6 +90,9 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/qldb/faqs/
 common:
+- type: CapabilityMap
+  url: capabilities/amazon-qldb-capability-edges.yml
+  name: Amazon QLDB Business Capability Map
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-qldb/overview
 - type: AgenticAccess
