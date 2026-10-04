@@ -178,10 +178,11 @@ paths:
       - Journal S3 Exports
 components:
   schemas:
-    JournalS3ExportList:
-      type: array
-      items:
-        $ref: '#/components/schemas/JournalS3ExportDescription'
+    UniqueId:
+      type: string
+      pattern: ^[A-Za-z-0-9]+$
+      minLength: 22
+      maxLength: 22
     S3ExportConfiguration:
       type: object
       required:
@@ -202,26 +203,71 @@ components:
           - $ref: '#/components/schemas/S3EncryptionConfiguration'
           - description: The encryption settings that are used by a journal export job to write data in an Amazon S3 bucket.
       description: The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.
-    UniqueId:
+    S3Bucket:
       type: string
-      pattern: ^[A-Za-z-0-9]+$
-      minLength: 22
-      maxLength: 22
+      pattern: ^[A-Za-z-0-9-_.]+$
+      minLength: 3
+      maxLength: 255
+    JournalS3ExportList:
+      type: array
+      items:
+        $ref: '#/components/schemas/JournalS3ExportDescription'
+    Arn:
+      type: string
+      minLength: 20
+      maxLength: 1600
     ExportStatus:
       type: string
       enum:
       - IN_PROGRESS
       - COMPLETED
       - CANCELLED
-    S3Prefix:
+    S3EncryptionConfiguration:
+      type: object
+      required:
+      - ObjectEncryptionType
+      properties:
+        ObjectEncryptionType:
+          allOf:
+          - $ref: '#/components/schemas/S3ObjectEncryptionType'
+          - description: <p>The Amazon S3 object encryption type.</p> <p>To learn more about server-side encryption options in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data Using Server-Side Encryption</a> in the <i>Amazon S3 Developer Guide</i>.</p>
+        KmsKeyArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: <p>The Amazon Resource Name (ARN) of a symmetric key in Key Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p> <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p> <p> <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the <code>ObjectEncryptionType</code>.</p>
+      description: The encryption settings that are used by a journal export job to write data in an Amazon Simple Storage Service (Amazon S3) bucket.
+    ListJournalS3ExportsResponse:
+      type: object
+      properties:
+        JournalS3Exports:
+          allOf:
+          - $ref: '#/components/schemas/JournalS3ExportList'
+          - description: The array of journal export job descriptions for all ledgers that are associated with the current Amazon Web Services account and Region.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: <ul> <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li> <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalS3Exports</code> call.</p> </li> </ul>
+    S3ObjectEncryptionType:
       type: string
-      minLength: 0
-      maxLength: 128
+      enum:
+      - SSE_KMS
+      - SSE_S3
+      - NO_ENCRYPTION
     LedgerName:
       type: string
       pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
       minLength: 1
       maxLength: 32
+    S3Prefix:
+      type: string
+      minLength: 0
+      maxLength: 128
+    OutputFormat:
+      type: string
+      enum:
+      - ION_BINARY
+      - ION_TEXT
+      - JSON
     JournalS3ExportDescription:
       type: object
       required:
@@ -269,69 +315,17 @@ components:
           - $ref: '#/components/schemas/OutputFormat'
           - description: The output format of the exported journal data.
       description: Information about a journal export job, including the ledger name, export ID, creation time, current status, and the parameters of the original export creation request.
-    OutputFormat:
+    Timestamp:
       type: string
-      enum:
-      - ION_BINARY
-      - ION_TEXT
-      - JSON
+      format: date-time
     NextToken:
       type: string
       pattern: ^[A-Za-z-0-9+/=]+$
       minLength: 4
       maxLength: 1024
-    Timestamp:
-      type: string
-      format: date-time
-    Arn:
-      type: string
-      minLength: 20
-      maxLength: 1600
-    S3ObjectEncryptionType:
-      type: string
-      enum:
-      - SSE_KMS
-      - SSE_S3
-      - NO_ENCRYPTION
-    S3EncryptionConfiguration:
-      type: object
-      required:
-      - ObjectEncryptionType
-      properties:
-        ObjectEncryptionType:
-          allOf:
-          - $ref: '#/components/schemas/S3ObjectEncryptionType'
-          - description: <p>The Amazon S3 object encryption type.</p> <p>To learn more about server-side encryption options in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data Using Server-Side Encryption</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        KmsKeyArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: <p>The Amazon Resource Name (ARN) of a symmetric key in Key Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p> <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p> <p> <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the <code>ObjectEncryptionType</code>.</p>
-      description: The encryption settings that are used by a journal export job to write data in an Amazon Simple Storage Service (Amazon S3) bucket.
-    S3Bucket:
-      type: string
-      pattern: ^[A-Za-z-0-9-_.]+$
-      minLength: 3
-      maxLength: 255
-    ListJournalS3ExportsResponse:
-      type: object
-      properties:
-        JournalS3Exports:
-          allOf:
-          - $ref: '#/components/schemas/JournalS3ExportList'
-          - description: The array of journal export job descriptions for all ledgers that are associated with the current Amazon Web Services account and Region.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: <ul> <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li> <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalS3Exports</code> call.</p> </li> </ul>
   parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -342,14 +336,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -360,8 +354,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
