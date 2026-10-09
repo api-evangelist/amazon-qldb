@@ -1,19 +1,30 @@
-generated: '2026-07-15'
+generated: '2026-09-23'
 method: generated
-source: openapi/amazon-qldb-openapi-original.yaml
+source: openapi/amazon-qldb-journal-s3-exports-api-openapi.yml, openapi/amazon-qldb-ledgers-api-openapi.yml,
+  openapi/amazon-qldb-tags-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
 summary:
   operations: 20
   by_action_class:
-    acting: 12
-    connected: 8
+    connected: 11
+    acting: 9
   by_consequence:
-    write: 12
-    read: 8
+    read: 11
+    write: 9
   human_in_the_loop_required: 0
 operations:
+- path: /journal-s3-exports
+  method: get
+  operationId: ListJournalS3Exports
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
 - path: /ledgers/{name}/journal-kinesis-streams/{streamId}
   method: delete
   operationId: CancelJournalKinesisStream
@@ -148,50 +159,32 @@ operations:
   method: post
   operationId: GetBlock
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /ledgers/{name}/digest
   method: post
   operationId: GetDigest
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /ledgers/{name}/revision
   method: post
   operationId: GetRevision
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /ledgers/{name}/journal-kinesis-streams
   method: get
   operationId: ListJournalKinesisStreamsForLedger
@@ -218,16 +211,22 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /journal-s3-exports
-  method: get
-  operationId: ListJournalS3Exports
+- path: /ledgers/{name}/permissions-mode
+  method: patch
+  operationId: UpdateLedgerPermissionsMode
   x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
     token:
-      max-ttl: 3600
-    audit: none
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
 - path: /tags/{resourceArn}
   method: get
   operationId: ListTagsForResource
@@ -257,22 +256,6 @@ operations:
 - path: /tags/{resourceArn}#tagKeys
   method: delete
   operationId: UntagResource
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /ledgers/{name}/permissions-mode
-  method: patch
-  operationId: UpdateLedgerPermissionsMode
   x-agentic-access:
     action-class: acting
     consequence: write
