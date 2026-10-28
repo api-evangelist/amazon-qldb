@@ -64,241 +64,200 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
+> **No longer operating.** This company or product has shut down, been discontinued, or been deprecated. This profile is kept as a historical record and is not maintained or rated.
+
 Amazon Quantum Ledger Database (QLDB) is a fully managed ledger database that provides a transparent, immutable, and cryptographically verifiable transaction log. QLDB tracks each and every application data change and maintains a complete and verifiable history of changes over time, making it ideal for systems of record where data integrity and auditability are critical.
 
-**URL:** [Visit APIs.json URL](https://aws.amazon.com/qldb/)
+**Areas:** AWS · Blockchain · Database · Ledger · Defunct
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Amazon QLDB on APIs.io (historical record)
 
-## Tags:
+Everything profiled for Amazon QLDB is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amazon-qldb/](https://apis.io/providers/amazon-qldb/)** — or go straight to one of the APIs or properties below.
 
- - AWS, Blockchain, Database, Ledger
+### APIs (3)
 
-## Timestamps
+- [Amazon QLDB Journal S3 Exports API](https://apis.io/apis/amazon-qldb/amazon-qldb-journal-s3-exports-api/) — The Journal S3 Exports API from Amazon QLDB — 1 operation(s) for journal s3 exports.
+- [Amazon QLDB Ledgers API](https://apis.io/apis/amazon-qldb/amazon-qldb-ledgers-api/) — The Ledgers API from Amazon QLDB — 10 operation(s) for ledgers.
+- [Amazon QLDB Tags API](https://apis.io/apis/amazon-qldb/amazon-qldb-tags-api/) — The Tags API from Amazon QLDB — 2 operation(s) for tags.
 
-- **Created:** 2024-01-15
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Amazon QLDB API
-The Amazon QLDB API provides programmatic access to manage ledger databases with immutable, transparent, and cryptographically verifiable transaction logs. It enables developers to create and manage ledgers, submit PartiQL statements, stream journal data, and export ledger blocks for verification and auditing purposes.
+#### Agentic access (1)
 
-**Human URL:** [https://aws.amazon.com/qldb/](https://aws.amazon.com/qldb/)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags:
+- [Amazon Qldb Agentic Access](https://apis.io/agentic-access/amazon-qldb/amazon-qldb-agentic-access/)
 
- - AWS, Blockchain, Database, Ledger
+#### JSON Schema (41)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://docs.aws.amazon.com/qldb/)
-- [OpenAPI](openapi/amazon-qldb-openapi.yml)
-- [Pricing](https://aws.amazon.com/qldb/pricing/)
-- [Getting Started](https://aws.amazon.com/qldb/getting-started/)
-- [FAQ](https://aws.amazon.com/qldb/faqs/)
+- [CancelJournalKinesisStreamResponse](https://apis.io/schemas/amazon-qldb/amazon-qldb-cancel-journal-kinesis-stream-response/)
+- [CreateLedgerRequest](https://apis.io/schemas/amazon-qldb/amazon-qldb-create-ledger-request/)
+- [CreateLedgerResponse](https://apis.io/schemas/amazon-qldb/amazon-qldb-create-ledger-response/)
+- [DescribeJournalKinesisStreamResponse](https://apis.io/schemas/amazon-qldb/amazon-qldb-describe-journal-kinesis-stream-response/)
+- [DescribeJournalS3ExportResponse](https://apis.io/schemas/amazon-qldb/amazon-qldb-describe-journal-s3export-response/)
+- [DescribeLedgerResponse](https://apis.io/schemas/amazon-qldb/amazon-qldb-describe-ledger-response/)
+- [EncryptionStatus](https://apis.io/schemas/amazon-qldb/amazon-qldb-encryption-status/)
+- [ErrorCause](https://apis.io/schemas/amazon-qldb/amazon-qldb-error-cause/)
+- [ExportJournalToS3Request](https://apis.io/schemas/amazon-qldb/amazon-qldb-export-journal-to-s3request/)
+- [ExportJournalToS3Response](https://apis.io/schemas/amazon-qldb/amazon-qldb-export-journal-to-s3response/)
+- [ExportStatus](https://apis.io/schemas/amazon-qldb/amazon-qldb-export-status/)
+- [GetBlockRequest](https://apis.io/schemas/amazon-qldb/amazon-qldb-get-block-request/)
+- [GetBlockResponse](https://apis.io/schemas/amazon-qldb/amazon-qldb-get-block-response/)
+- [GetDigestResponse](https://apis.io/schemas/amazon-qldb/amazon-qldb-get-digest-response/)
+- [GetRevisionRequest](https://apis.io/schemas/amazon-qldb/amazon-qldb-get-revision-request/)
+- [GetRevisionResponse](https://apis.io/schemas/amazon-qldb/amazon-qldb-get-revision-response/)
+- [JournalKinesisStreamDescription](https://apis.io/schemas/amazon-qldb/amazon-qldb-journal-kinesis-stream-description/)
+- [JournalS3ExportDescription](https://apis.io/schemas/amazon-qldb/amazon-qldb-journal-s3export-description/)
+- [KinesisConfiguration](https://apis.io/schemas/amazon-qldb/amazon-qldb-kinesis-configuration/)
+- [LedgerEncryptionDescription](https://apis.io/schemas/amazon-qldb/amazon-qldb-ledger-encryption-description/)
+- [LedgerState](https://apis.io/schemas/amazon-qldb/amazon-qldb-ledger-state/)
+- [LedgerSummary](https://apis.io/schemas/amazon-qldb/amazon-qldb-ledger-summary/)
+- [ListJournalKinesisStreamsForLedgerResponse](https://apis.io/schemas/amazon-qldb/amazon-qldb-list-journal-kinesis-streams-for-ledger-response/)
+- [ListJournalS3ExportsForLedgerResponse](https://apis.io/schemas/amazon-qldb/amazon-qldb-list-journal-s3exports-for-ledger-response/)
+- [ListJournalS3ExportsResponse](https://apis.io/schemas/amazon-qldb/amazon-qldb-list-journal-s3exports-response/)
+- …and 16 more published on APIs.io
 
-## Common Properties
+#### JSON Structure (41)
 
-- [Portal](https://aws.amazon.com/)
+Data models expressed in JSON Structure.
+
+- [Amazon Qldb Cancel Journal Kinesis Stream Response Structure](https://apis.io/json-structure/amazon-qldb/amazon-qldb-cancel-journal-kinesis-stream-response-structure/)
+- [Amazon Qldb Create Ledger Request Structure](https://apis.io/json-structure/amazon-qldb/amazon-qldb-create-ledger-request-structure/)
+- [Amazon Qldb Create Ledger Response Structure](https://apis.io/json-structure/amazon-qldb/amazon-qldb-create-ledger-response-structure/)
+- [Amazon Qldb Describe Journal Kinesis Stream Response Structure](https://apis.io/json-structure/amazon-qldb/amazon-qldb-describe-journal-kinesis-stream-response-structure/)
+- [Amazon Qldb Describe Journal S3Export Response Structure](https://apis.io/json-structure/amazon-qldb/amazon-qldb-describe-journal-s3export-response-structure/)
+- [Amazon Qldb Describe Ledger Response Structure](https://apis.io/json-structure/amazon-qldb/amazon-qldb-describe-ledger-response-structure/)
+- [Amazon Qldb Encryption Status Structure](https://apis.io/json-structure/amazon-qldb/amazon-qldb-encryption-status-structure/)
+- [Amazon Qldb Error Cause Structure](https://apis.io/json-structure/amazon-qldb/amazon-qldb-error-cause-structure/)
+- [Amazon Qldb Export Journal To S3Request Structure](https://apis.io/json-structure/amazon-qldb/amazon-qldb-export-journal-to-s3request-structure/)
+- [Amazon Qldb Export Journal To S3Response Structure](https://apis.io/json-structure/amazon-qldb/amazon-qldb-export-journal-to-s3response-structure/)
+- [Amazon Qldb Export Status Structure](https://apis.io/json-structure/amazon-qldb/amazon-qldb-export-status-structure/)
+- [Amazon Qldb Get Block Request Structure](https://apis.io/json-structure/amazon-qldb/amazon-qldb-get-block-request-structure/)
+- [Amazon Qldb Get Block Response Structure](https://apis.io/json-structure/amazon-qldb/amazon-qldb-get-block-response-structure/)
+- [Amazon Qldb Get Digest Response Structure](https://apis.io/json-structure/amazon-qldb/amazon-qldb-get-digest-response-structure/)
+- [Amazon Qldb Get Revision Request Structure](https://apis.io/json-structure/amazon-qldb/amazon-qldb-get-revision-request-structure/)
+- [Amazon Qldb Get Revision Response Structure](https://apis.io/json-structure/amazon-qldb/amazon-qldb-get-revision-response-structure/)
+- [Amazon Qldb Journal Kinesis Stream Description Structure](https://apis.io/json-structure/amazon-qldb/amazon-qldb-journal-kinesis-stream-description-structure/)
+- [Amazon Qldb Journal S3Export Description Structure](https://apis.io/json-structure/amazon-qldb/amazon-qldb-journal-s3export-description-structure/)
+- [Amazon Qldb Kinesis Configuration Structure](https://apis.io/json-structure/amazon-qldb/amazon-qldb-kinesis-configuration-structure/)
+- [Amazon Qldb Ledger Encryption Description Structure](https://apis.io/json-structure/amazon-qldb/amazon-qldb-ledger-encryption-description-structure/)
+- [Amazon Qldb Ledger State Structure](https://apis.io/json-structure/amazon-qldb/amazon-qldb-ledger-state-structure/)
+- [Amazon Qldb Ledger Summary Structure](https://apis.io/json-structure/amazon-qldb/amazon-qldb-ledger-summary-structure/)
+- [Amazon Qldb List Journal Kinesis Streams For Ledger Response Structure](https://apis.io/json-structure/amazon-qldb/amazon-qldb-list-journal-kinesis-streams-for-ledger-response-structure/)
+- [Amazon Qldb List Journal S3Exports For Ledger Response Structure](https://apis.io/json-structure/amazon-qldb/amazon-qldb-list-journal-s3exports-for-ledger-response-structure/)
+- [Amazon Qldb List Journal S3Exports Response Structure](https://apis.io/json-structure/amazon-qldb/amazon-qldb-list-journal-s3exports-response-structure/)
+- …and 16 more published on APIs.io
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Amazon Qldb Context](https://apis.io/jsonld/amazon-qldb/amazon-qldb-context/)
+
+#### Examples (33)
+
+Example requests and responses.
+
+- [Amazon Qldb Cancel Journal Kinesis Stream Response Example](https://apis.io/examples/amazon-qldb/amazon-qldb-cancel-journal-kinesis-stream-response-example/)
+- [Amazon Qldb Create Ledger Request Example](https://apis.io/examples/amazon-qldb/amazon-qldb-create-ledger-request-example/)
+- [Amazon Qldb Create Ledger Response Example](https://apis.io/examples/amazon-qldb/amazon-qldb-create-ledger-response-example/)
+- [Amazon Qldb Describe Journal Kinesis Stream Response Example](https://apis.io/examples/amazon-qldb/amazon-qldb-describe-journal-kinesis-stream-response-example/)
+- [Amazon Qldb Describe Journal S3Export Response Example](https://apis.io/examples/amazon-qldb/amazon-qldb-describe-journal-s3export-response-example/)
+- [Amazon Qldb Describe Ledger Response Example](https://apis.io/examples/amazon-qldb/amazon-qldb-describe-ledger-response-example/)
+- [Amazon Qldb Export Journal To S3Request Example](https://apis.io/examples/amazon-qldb/amazon-qldb-export-journal-to-s3request-example/)
+- [Amazon Qldb Export Journal To S3Response Example](https://apis.io/examples/amazon-qldb/amazon-qldb-export-journal-to-s3response-example/)
+- [Amazon Qldb Get Block Request Example](https://apis.io/examples/amazon-qldb/amazon-qldb-get-block-request-example/)
+- [Amazon Qldb Get Block Response Example](https://apis.io/examples/amazon-qldb/amazon-qldb-get-block-response-example/)
+- [Amazon Qldb Get Digest Response Example](https://apis.io/examples/amazon-qldb/amazon-qldb-get-digest-response-example/)
+- [Amazon Qldb Get Revision Request Example](https://apis.io/examples/amazon-qldb/amazon-qldb-get-revision-request-example/)
+- [Amazon Qldb Get Revision Response Example](https://apis.io/examples/amazon-qldb/amazon-qldb-get-revision-response-example/)
+- [Amazon Qldb Journal Kinesis Stream Description Example](https://apis.io/examples/amazon-qldb/amazon-qldb-journal-kinesis-stream-description-example/)
+- [Amazon Qldb Journal S3Export Description Example](https://apis.io/examples/amazon-qldb/amazon-qldb-journal-s3export-description-example/)
+- [Amazon Qldb Kinesis Configuration Example](https://apis.io/examples/amazon-qldb/amazon-qldb-kinesis-configuration-example/)
+- [Amazon Qldb Ledger Encryption Description Example](https://apis.io/examples/amazon-qldb/amazon-qldb-ledger-encryption-description-example/)
+- [Amazon Qldb Ledger Summary Example](https://apis.io/examples/amazon-qldb/amazon-qldb-ledger-summary-example/)
+- [Amazon Qldb List Journal Kinesis Streams For Ledger Response Example](https://apis.io/examples/amazon-qldb/amazon-qldb-list-journal-kinesis-streams-for-ledger-response-example/)
+- [Amazon Qldb List Journal S3Exports For Ledger Response Example](https://apis.io/examples/amazon-qldb/amazon-qldb-list-journal-s3exports-for-ledger-response-example/)
+- [Amazon Qldb List Journal S3Exports Response Example](https://apis.io/examples/amazon-qldb/amazon-qldb-list-journal-s3exports-response-example/)
+- [Amazon Qldb List Ledgers Response Example](https://apis.io/examples/amazon-qldb/amazon-qldb-list-ledgers-response-example/)
+- [Amazon Qldb List Tags For Resource Response Example](https://apis.io/examples/amazon-qldb/amazon-qldb-list-tags-for-resource-response-example/)
+- [Amazon Qldb S3Encryption Configuration Example](https://apis.io/examples/amazon-qldb/amazon-qldb-s3encryption-configuration-example/)
+- [Amazon Qldb S3Export Configuration Example](https://apis.io/examples/amazon-qldb/amazon-qldb-s3export-configuration-example/)
+- …and 8 more published on APIs.io
+
+#### Collections (6)
+
+Postman and Open Collection request collections.
+
+- [Amazon QLDB Journal S3 Exports API](https://apis.io/collections/amazon-qldb/open-amazon-qldb-journal-s3-exports-api/)
+- [Amazon QLDB Journal S3 Exports Ledgers API](https://apis.io/collections/amazon-qldb/open-amazon-qldb-ledgers-api/)
+- [Amazon QLDB Journal S3 Exports Tags API](https://apis.io/collections/amazon-qldb/open-amazon-qldb-tags-api/)
+- [Amazon QLDB Journal S3 Exports API](https://apis.io/collections/amazon-qldb/postman-amazon-qldb-journal-s3-exports-api/)
+- [Amazon QLDB Journal S3 Exports Ledgers API](https://apis.io/collections/amazon-qldb/postman-amazon-qldb-ledgers-api/)
+- [Amazon QLDB Journal S3 Exports Tags API](https://apis.io/collections/amazon-qldb/postman-amazon-qldb-tags-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Amazon QLDB — jsonschema rules](https://apis.io/rules/amazon-qldb/amazon-qldb-jsonschema-spectral-rules/)
+- [Amazon QLDB API Rules](https://apis.io/rules/amazon-qldb/amazon-qldb-spectral-rules/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Amazon Qldb Authentication](https://apis.io/security/amazon-qldb/amazon-qldb-authentication/)
+- [Amazon Qldb Domain Security](https://apis.io/security/amazon-qldb/amazon-qldb-domain-security/)
+- [Amazon Qldb Trust Center](https://apis.io/security/amazon-qldb/amazon-qldb-trust-center/)
+- [Amazon Qldb Vulnerability Disclosure](https://apis.io/security/amazon-qldb/amazon-qldb-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Amazon Qldb Plans Pricing](https://apis.io/plans/amazon-qldb/amazon-qldb-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Amazon Qldb Rate Limits](https://apis.io/rate-limits/amazon-qldb/amazon-qldb-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Amazon Qldb Finops](https://apis.io/finops/amazon-qldb/amazon-qldb-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://aws.amazon.com/qldb/)
 - [Documentation](https://docs.aws.amazon.com/qldb/)
-- [Terms of Service](https://aws.amazon.com/service-terms/)
-- [Privacy Policy](https://aws.amazon.com/privacy/)
 - [Support](https://aws.amazon.com/premiumsupport/)
-- [GitHub Organization](https://github.com/aws)
-- [Console](https://console.aws.amazon.com/qldb/)
-- [Sign Up](https://signin.aws.amazon.com/signup?request_type=register)
-- [Login](https://aws.amazon.com/console/)
+- [Terms of service](https://aws.amazon.com/service-terms/)
+- [Privacy policy](https://aws.amazon.com/privacy/)
+- [GitHub](https://github.com/aws)
 - [Status](https://health.aws.amazon.com/health/status)
-- [Contact](https://aws.amazon.com/contact-us/)
-- [JSON-LD](json-ld/amazon-qldb-context.jsonld)
-- [JSONSchema](json-schema/amazon-qldb-cancel-journal-kinesis-stream-response-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-create-ledger-request-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-create-ledger-response-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-describe-journal-kinesis-stream-response-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-describe-journal-s3export-response-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-describe-ledger-response-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-encryption-status-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-error-cause-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-export-journal-to-s3request-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-export-journal-to-s3response-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-export-status-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-get-block-request-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-get-block-response-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-get-digest-response-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-get-revision-request-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-get-revision-response-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-journal-kinesis-stream-description-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-journal-s3export-description-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-kinesis-configuration-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-ledger-encryption-description-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-ledger-state-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-ledger-summary-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-list-journal-kinesis-streams-for-ledger-response-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-list-journal-s3exports-for-ledger-response-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-list-journal-s3exports-response-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-list-ledgers-response-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-list-tags-for-resource-response-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-output-format-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-permissions-mode-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-s3encryption-configuration-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-s3export-configuration-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-s3object-encryption-type-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-stream-journal-to-kinesis-request-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-stream-journal-to-kinesis-response-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-stream-status-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-tag-resource-request-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-update-ledger-permissions-mode-request-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-update-ledger-permissions-mode-response-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-update-ledger-request-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-update-ledger-response-schema.json)
-- [JSONSchema](json-schema/amazon-qldb-value-holder-schema.json)
-- [JSONStructure](json-structure/amazon-qldb-cancel-journal-kinesis-stream-response-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-create-ledger-request-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-create-ledger-response-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-describe-journal-kinesis-stream-response-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-describe-journal-s3export-response-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-describe-ledger-response-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-encryption-status-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-error-cause-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-export-journal-to-s3request-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-export-journal-to-s3response-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-export-status-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-get-block-request-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-get-block-response-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-get-digest-response-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-get-revision-request-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-get-revision-response-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-journal-kinesis-stream-description-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-journal-s3export-description-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-kinesis-configuration-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-ledger-encryption-description-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-ledger-state-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-ledger-summary-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-list-journal-kinesis-streams-for-ledger-response-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-list-journal-s3exports-for-ledger-response-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-list-journal-s3exports-response-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-list-ledgers-response-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-list-tags-for-resource-response-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-output-format-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-permissions-mode-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-s3encryption-configuration-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-s3export-configuration-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-s3object-encryption-type-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-stream-journal-to-kinesis-request-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-stream-journal-to-kinesis-response-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-stream-status-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-tag-resource-request-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-update-ledger-permissions-mode-request-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-update-ledger-permissions-mode-response-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-update-ledger-request-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-update-ledger-response-structure.json)
-- [JSONStructure](json-structure/amazon-qldb-value-holder-structure.json)
-- [Example](examples/amazon-qldb-cancel-journal-kinesis-stream-response-example.json)
-- [Example](examples/amazon-qldb-create-ledger-request-example.json)
-- [Example](examples/amazon-qldb-create-ledger-response-example.json)
-- [Example](examples/amazon-qldb-describe-journal-kinesis-stream-response-example.json)
-- [Example](examples/amazon-qldb-describe-journal-s3export-response-example.json)
-- [Example](examples/amazon-qldb-describe-ledger-response-example.json)
-- [Example](examples/amazon-qldb-export-journal-to-s3request-example.json)
-- [Example](examples/amazon-qldb-export-journal-to-s3response-example.json)
-- [Example](examples/amazon-qldb-get-block-request-example.json)
-- [Example](examples/amazon-qldb-get-block-response-example.json)
-- [Example](examples/amazon-qldb-get-digest-response-example.json)
-- [Example](examples/amazon-qldb-get-revision-request-example.json)
-- [Example](examples/amazon-qldb-get-revision-response-example.json)
-- [Example](examples/amazon-qldb-journal-kinesis-stream-description-example.json)
-- [Example](examples/amazon-qldb-journal-s3export-description-example.json)
-- [Example](examples/amazon-qldb-kinesis-configuration-example.json)
-- [Example](examples/amazon-qldb-ledger-encryption-description-example.json)
-- [Example](examples/amazon-qldb-ledger-summary-example.json)
-- [Example](examples/amazon-qldb-list-journal-kinesis-streams-for-ledger-response-example.json)
-- [Example](examples/amazon-qldb-list-journal-s3exports-for-ledger-response-example.json)
-- [Example](examples/amazon-qldb-list-journal-s3exports-response-example.json)
-- [Example](examples/amazon-qldb-list-ledgers-response-example.json)
-- [Example](examples/amazon-qldb-list-tags-for-resource-response-example.json)
-- [Example](examples/amazon-qldb-s3encryption-configuration-example.json)
-- [Example](examples/amazon-qldb-s3export-configuration-example.json)
-- [Example](examples/amazon-qldb-stream-journal-to-kinesis-request-example.json)
-- [Example](examples/amazon-qldb-stream-journal-to-kinesis-response-example.json)
-- [Example](examples/amazon-qldb-tag-resource-request-example.json)
-- [Example](examples/amazon-qldb-update-ledger-permissions-mode-request-example.json)
-- [Example](examples/amazon-qldb-update-ledger-permissions-mode-response-example.json)
-- [Example](examples/amazon-qldb-update-ledger-request-example.json)
-- [Example](examples/amazon-qldb-update-ledger-response-example.json)
-- [Example](examples/amazon-qldb-value-holder-example.json)
-- [NaftikoCapability](capabilities/shared/amazon-qldb.yaml)
-- [SpectralRules](rules/amazon-qldb-spectral-rules.yml)
 
-## Artifacts
+## API Evangelist rating
 
-Machine-readable API specifications organized by format.
+**Not rated** — this company is recorded as no longer operating, so no score is published. If it is in fact operating, say so on this repository and it will be re-profiled.
 
-### OpenAPI
+## How this profile is made
 
-- [amazon-qldb-openapi-original.yaml](openapi/amazon-qldb-openapi-original.yaml)
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-### JSON Schema
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Amazon QLDB: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-- [amazon-qldb-cancel-journal-kinesis-stream-response-schema.json](json-schema/amazon-qldb-cancel-journal-kinesis-stream-response-schema.json)
-- [amazon-qldb-create-ledger-request-schema.json](json-schema/amazon-qldb-create-ledger-request-schema.json)
-- [amazon-qldb-create-ledger-response-schema.json](json-schema/amazon-qldb-create-ledger-response-schema.json)
-- [amazon-qldb-describe-journal-kinesis-stream-response-schema.json](json-schema/amazon-qldb-describe-journal-kinesis-stream-response-schema.json)
-- [amazon-qldb-describe-journal-s3export-response-schema.json](json-schema/amazon-qldb-describe-journal-s3export-response-schema.json)
-- [amazon-qldb-describe-ledger-response-schema.json](json-schema/amazon-qldb-describe-ledger-response-schema.json)
-- [amazon-qldb-encryption-status-schema.json](json-schema/amazon-qldb-encryption-status-schema.json)
-- [amazon-qldb-error-cause-schema.json](json-schema/amazon-qldb-error-cause-schema.json)
-- [amazon-qldb-export-journal-to-s3request-schema.json](json-schema/amazon-qldb-export-journal-to-s3request-schema.json)
-- [amazon-qldb-export-journal-to-s3response-schema.json](json-schema/amazon-qldb-export-journal-to-s3response-schema.json)
-- ...and 31 more
+## Open an issue
 
-### JSON Structure
-
-- [amazon-qldb-cancel-journal-kinesis-stream-response-structure.json](json-structure/amazon-qldb-cancel-journal-kinesis-stream-response-structure.json)
-- [amazon-qldb-create-ledger-request-structure.json](json-structure/amazon-qldb-create-ledger-request-structure.json)
-- [amazon-qldb-create-ledger-response-structure.json](json-structure/amazon-qldb-create-ledger-response-structure.json)
-- [amazon-qldb-describe-journal-kinesis-stream-response-structure.json](json-structure/amazon-qldb-describe-journal-kinesis-stream-response-structure.json)
-- [amazon-qldb-describe-journal-s3export-response-structure.json](json-structure/amazon-qldb-describe-journal-s3export-response-structure.json)
-- [amazon-qldb-describe-ledger-response-structure.json](json-structure/amazon-qldb-describe-ledger-response-structure.json)
-- [amazon-qldb-encryption-status-structure.json](json-structure/amazon-qldb-encryption-status-structure.json)
-- [amazon-qldb-error-cause-structure.json](json-structure/amazon-qldb-error-cause-structure.json)
-- [amazon-qldb-export-journal-to-s3request-structure.json](json-structure/amazon-qldb-export-journal-to-s3request-structure.json)
-- [amazon-qldb-export-journal-to-s3response-structure.json](json-structure/amazon-qldb-export-journal-to-s3response-structure.json)
-- ...and 31 more
-
-### JSON-LD
-
-- [amazon-qldb-context.jsonld](json-ld/amazon-qldb-context.jsonld)
-
-### Examples
-
-- [amazon-qldb-cancel-journal-kinesis-stream-response-example.json](examples/amazon-qldb-cancel-journal-kinesis-stream-response-example.json)
-- [amazon-qldb-create-ledger-request-example.json](examples/amazon-qldb-create-ledger-request-example.json)
-- [amazon-qldb-create-ledger-response-example.json](examples/amazon-qldb-create-ledger-response-example.json)
-- [amazon-qldb-describe-journal-kinesis-stream-response-example.json](examples/amazon-qldb-describe-journal-kinesis-stream-response-example.json)
-- [amazon-qldb-describe-journal-s3export-response-example.json](examples/amazon-qldb-describe-journal-s3export-response-example.json)
-- [amazon-qldb-describe-ledger-response-example.json](examples/amazon-qldb-describe-ledger-response-example.json)
-- [amazon-qldb-export-journal-to-s3request-example.json](examples/amazon-qldb-export-journal-to-s3request-example.json)
-- [amazon-qldb-export-journal-to-s3response-example.json](examples/amazon-qldb-export-journal-to-s3response-example.json)
-- [amazon-qldb-get-block-request-example.json](examples/amazon-qldb-get-block-request-example.json)
-- [amazon-qldb-get-block-response-example.json](examples/amazon-qldb-get-block-response-example.json)
-- ...and 23 more
-
-## Capabilities
-
-Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
-
-### Shared Per-API Definitions
-
-- [amazon-qldb.yaml](capabilities/shared/amazon-qldb.yaml)
-
-## Rules
-
-- [amazon-qldb-spectral-rules.yml](rules/amazon-qldb-spectral-rules.yml)
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amazon-qldb/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
