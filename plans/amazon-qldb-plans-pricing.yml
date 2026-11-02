@@ -103,7 +103,7 @@ rate_limit_statements:
 - Read replicas Up to 15 Aurora replicas for read scalability
 - Data API request data payloads are metered at 32KB per request
 x-canonical:
-  generated: '2026-11-01'
+  generated: '2026-11-02'
   vocabulary: engine/economics/plans-canonical.yml
   models:
   - hybrid
