@@ -1,0 +1,212 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-28'
+method: searched
+source: https://aws.amazon.com/rds/aurora/pricing/
+sources:
+- https://aws.amazon.com/rds/aurora/pricing/
+- https://aws.amazon.com/qldb/pricing/
+provenance:
+  tool: engine/economics/harvest_pricing.py
+  run: 20261028T161713
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: usage-other
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-28'
+published: true
+note: Main Aurora instance/storage rate tables render via dynamic pricing tokens (no visible numbers);
+  numeric prices come from CPU credit rates, extended support rates, and worked pricing examples. Page
+  prices Amazon Aurora, not QLDB.
+plan_count: 12
+currency: USD
+plans:
+- name: T4g and T3 CPU Credits
+  price_text: $0.09 per vCPU-Hour
+  price: 0.09
+  currency: USD
+  period: per-use
+  unit: vCPU-Hour
+- name: Aurora Serverless (Aurora Standard, US East N. Virginia example)
+  price_text: $0.12 per ACU-hour
+  price: 0.12
+  currency: USD
+  period: per-use
+  unit: ACU-hour
+- name: Aurora Serverless (Aurora I/O-Optimized, example)
+  price_text: $0.156 per ACU-hour
+  price: 0.156
+  currency: USD
+  period: per-use
+  unit: ACU-hour
+- name: Storage - Aurora Standard (example)
+  price_text: $0.10 per GB-month
+  price: 0.1
+  currency: USD
+  period: per-use
+  unit: GB-month
+- name: Storage - Aurora I/O-Optimized (example)
+  price_text: $0.225 per GB-month
+  price: 0.225
+  currency: USD
+  period: per-use
+  unit: GB-month
+- name: I/O operations - Aurora Standard (example)
+  price_text: $0.20 per 1 million I/Os
+  price: 0.2
+  currency: USD
+  period: per-use
+  unit: 1 million I/Os
+- name: Data API - first 1 billion requests (example)
+  price_text: $0.35/million
+  price: 0.35
+  currency: USD
+  period: per-use
+  unit: million requests
+  included_quota: Data API free tier includes one million API requests per month, aggregated across AWS
+    Regions, for the first year.
+- name: Data API - above 1 billion requests (example)
+  price_text: $0.20/million
+  price: 0.2
+  currency: USD
+  period: per-use
+  unit: million requests
+- name: RDS Extended Support Year 1-2 (US East Ohio example)
+  price_text: $0.100 per vCPU-hr
+  price: 0.1
+  currency: USD
+  period: per-use
+  unit: vCPU-hr
+- name: RDS Extended Support Year 3 (example)
+  price_text: $0.200 per vCPU-hr
+  price: 0.2
+  currency: USD
+  period: per-use
+  unit: vCPU-hr
+- name: Snapshot/cluster export (example)
+  price_text: $0.010 per GB
+  price: 0.01
+  currency: USD
+  period: per-use
+  unit: GB of snapshot size
+- name: Free Tier (new customers)
+  price_text: $100 in AWS credits
+  price: 100
+  currency: USD
+  period: one-time
+  unit: credits
+  included_quota: Aurora PostgreSQL serverless instances with up to 4 ACUs and 1 GiB of storage per cluster
+rate_limit_statements:
+- Free plan gives you access to Aurora PostgreSQL serverless instances with up to 4 ACUs and 1 GiB of
+  storage per cluster.
+- Read replicas Up to 15 Aurora replicas for read scalability
+- Data API request data payloads are metered at 32KB per request
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - hybrid
+  - subscription
+  units:
+  - compute
+  - credit
+  - data
+  - request
+  plans:
+  - name: T4g and T3 CPU Credits
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Aurora Serverless (Aurora Standard, US East N. Virginia example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Aurora Serverless (Aurora I/O-Optimized, example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Storage - Aurora Standard (example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: Storage - Aurora I/O-Optimized (example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: I/O operations - Aurora Standard (example)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Data API - first 1 billion requests (example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - request
+    periods:
+    - other
+  - name: Data API - above 1 billion requests (example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - request
+    periods:
+    - other
+  - name: RDS Extended Support Year 1-2 (US East Ohio example)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: RDS Extended Support Year 3 (example)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Snapshot/cluster export (example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: Free Tier (new customers)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - credit
+    periods:
+    - one-time
