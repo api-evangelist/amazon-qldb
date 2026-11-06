@@ -103,7 +103,7 @@ rate_limit_statements:
 - Read replicas Up to 15 Aurora replicas for read scalability
 - Data API request data payloads are metered at 32KB per request
 x-canonical:
-  generated: '2026-11-02'
+  generated: '2026-11-06'
   vocabulary: engine/economics/plans-canonical.yml
   models:
   - hybrid
@@ -180,18 +180,18 @@ x-canonical:
     - other
   - name: RDS Extended Support Year 1-2 (US East Ohio example)
     access: other
-    model: subscription
+    model: hybrid
     model_how: derived
     units:
-    - other
+    - compute
     periods:
     - other
   - name: RDS Extended Support Year 3 (example)
     access: other
-    model: subscription
+    model: hybrid
     model_how: derived
     units:
-    - other
+    - compute
     periods:
     - other
   - name: Snapshot/cluster export (example)
